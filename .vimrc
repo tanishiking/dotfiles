@@ -7,11 +7,13 @@ set fileencoding=utf-8
 
 "不可視文字を表示
 set list
-set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<,eol:<
+set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 "行番号表示
 set number
 "右下に表示される行・列の番号を表示する
 set ruler
+"タイトル表示
+set title
 
 "対応カッコに<と>のペアを追加
 set matchpairs& matchpairs+=<:>
