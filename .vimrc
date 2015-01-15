@@ -59,4 +59,38 @@ set hlsearch
 "検索時に大文字小文字を区別しない
 set ignorecase
 set smartcase
+
+
+"=============================
+"NeoBundle SetUp
+"=============================
+" 以下を追記
+set nocompatible
+filetype plugin indent off
+
+if has('vim_starting')
+    if &compatible
+        set nocompatible
+    endif
+
+    "Required:
+    set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
+endif
+
+"Required
+call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
+
+"Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'tomasr/molokai'
+
+call neobundle#end()
+
+filetype plugin indent on
+
+NeoBundleCheck
 ">>>>>>> f7814a28eba556009dd409a55224dd1378e25dbe
