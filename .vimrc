@@ -40,8 +40,8 @@ set showmatch
 set matchtime=2
 
 "OSのクリップボード使用
-set clipboard+=unnamed
-set clipboard=unnamed
+set clipboard=unnamed,autoselect
+set clipboard=unnamedplus
 "改行時の自動インデント
 set autoindent
 
@@ -65,32 +65,31 @@ set smartcase
 "NeoBundle SetUp
 "=============================
 " 以下を追記
-set nocompatible
-filetype plugin indent off
+"set nocompatible
+"filetype plugin indent off
 
-if has('vim_starting')
-    if &compatible
-        set nocompatible
-    endif
-
-    "Required:
-    set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
-endif
+"if has('vim_starting')
+"    if &compatible
+"        set nocompatible
+"    endif
+"
+"    "Required:
+"    set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
+"endif
 
 "Required
-call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
+"call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
 
 "Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
+"NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'tomasr/molokai'
+"NeoBundle 'Shougo/unite.vim'
+"NeoBundle 'Shougo/neosnippet.vim'
+"NeoBundle 'tomasr/molokai'
 
-call neobundle#end()
+"call neobundle#end()
 
-filetype plugin indent on
+"filetype plugin indent on
 
-NeoBundleCheck
-">>>>>>> f7814a28eba556009dd409a55224dd1378e25dbe
+"NeoBundleCheck
