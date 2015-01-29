@@ -17,7 +17,7 @@ set matchpairs& matchpairs+=<:>     "add match pair <>
 "show invisible chars
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
-
+set title "show title
 
 "===Searching===
 set incsearch    "enable to incremental search
