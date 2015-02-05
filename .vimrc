@@ -1,6 +1,6 @@
 syntax enable   "enable syntax processing
 
-"Spaces&Tab
+"===Spaces&Tab
 set tabstop=4   "number of visual spaces per <TAB>
 set softtabstop=4   "number of spaces in tab when edditing
 set expandtab   "tab to spaces(num is softtabstop)
@@ -9,6 +9,7 @@ set expandtab   "tab to spaces(num is softtabstop)
 set number  "show line numbers
 set showcmd     "show commands
 set cursorline  "highlight cursor line
+set cursorcolumn    "show cursor column
 filetype indent on  "load language specific indentation files ~/.vim/indent/
 set wildmenu    "visual autocomplete for command menu
 set lazyredraw  "redraw only when you type :redraw!
@@ -62,7 +63,7 @@ set fileencoding=utf-8
 
 
 "===Clipboard===
-set clipboard=unnamedplus
+set clipboard+=unnamed
 
 
 "=============================
@@ -84,6 +85,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'mttn/emmet-vim'
 
 call neobundle#end()
 filetype plugin indent on

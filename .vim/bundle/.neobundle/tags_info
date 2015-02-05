@@ -1,4 +1,6 @@
-molokai
+emmet-vim
 neobundle.vim
 neosnippet.vim
+syntastic
 unite.vim
+vim-autoclose
