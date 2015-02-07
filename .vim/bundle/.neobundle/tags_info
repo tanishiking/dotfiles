@@ -1,4 +1,6 @@
+emmet-vim
 jedi-vim
+molokai
 neobundle.vim
 neosnippet.vim
 syntastic

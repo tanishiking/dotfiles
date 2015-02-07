@@ -1,5 +1,3 @@
-syntax enable   "enable syntax processing
-
 "===Spaces&Tab
 set tabstop=4   "number of visual spaces per <TAB>
 set softtabstop=4   "number of spaces in tab when edditing
@@ -83,6 +81,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here
+NeoBundle 'tomasr/molokai'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Townk/vim-autoclose'
@@ -99,3 +98,8 @@ call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
+
+syntax enable   "enable syntax processing
+set background=dark
+colorscheme molokai
+set t_Co=256
