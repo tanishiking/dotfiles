@@ -1,9 +1,9 @@
 emmet-vim
 jedi-vim
-molokai
 neobundle.vim
 neosnippet.vim
 syntastic
 unite.vim
 vim-autoclose
 vim-flake8
+vim-tomorrow-theme

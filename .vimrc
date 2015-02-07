@@ -81,7 +81,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here
-NeoBundle 'tomasr/molokai'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Townk/vim-autoclose'
@@ -100,6 +100,5 @@ filetype plugin indent on
 NeoBundleCheck
 
 syntax enable   "enable syntax processing
-set background=dark
-colorscheme molokai
-set t_Co=256
+set background=light
+colorscheme Tomorrow
