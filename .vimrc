@@ -87,6 +87,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundleLazy "nvie/vim-flake8", {
