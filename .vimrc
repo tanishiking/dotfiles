@@ -87,7 +87,12 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/syntastic.git'
-NeoBundle 'mttn/emmet-vim'
+NeoBundle 'davidhalter/jedi-vim'
+
+NeoBundleLazy "nvie/vim-flake8", {
+    \ "autoload": {
+    \ "filetypes": ["python", "python3", "djangohtml"]
+    \ }}
 
 call neobundle#end()
 filetype plugin indent on

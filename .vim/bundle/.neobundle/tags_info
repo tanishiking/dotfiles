@@ -1,6 +1,7 @@
-emmet-vim
+jedi-vim
 neobundle.vim
 neosnippet.vim
 syntastic
 unite.vim
 vim-autoclose
+vim-flake8
