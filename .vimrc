@@ -81,12 +81,22 @@ call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here
+"===Color===
 NeoBundle 'chriskempson/vim-tomorrow-theme'
+
+"===basic plugins===
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/syntastic.git'
+
+"===html css js jquery===
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'hail2u/vim-css-syntax'
+NeoBundle 'taichouchou2/html5.vim'
+NeoBundle 'pangloss/vim-javascript'
+
+"===Python===
 NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundleLazy "nvie/vim-flake8", {
