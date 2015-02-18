@@ -98,7 +98,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here
 "===Color===
-NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'altercation/vim-colors-solarized'
 
 "===basic plugins===
 NeoBundle 'Shougo/unite.vim'
@@ -151,7 +151,6 @@ NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 
 "===Python===
-NeoBundle 'davidhalter/jedi-vim'
 
 NeoBundleLazy "nvie/vim-flake8", {
     \ "autoload": {
@@ -175,5 +174,5 @@ filetype plugin indent on
 NeoBundleCheck
 
 syntax enable   "enable syntax processing
-set background=light
-colorscheme Tomorrow
+set background=dark
+colorscheme solarized
