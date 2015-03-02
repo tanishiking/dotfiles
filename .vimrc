@@ -1,4 +1,4 @@
-"===Spaces&Tab
+"===Spaces&Tab===
 set tabstop=4   "number of visual spaces per <TAB>
 
 set softtabstop=4   "number of spaces in tab when edditing
@@ -20,7 +20,9 @@ set lazyredraw  "redraw only when you type :redraw!
 set showmatch   "hilight matching [{()}]
 set matchpairs& matchpairs+=<:>     "add match pair <>
 
-"show invisible chars
+set backspace=indent,eol,start  "enable to del anything by bs
+
+"===show invisible chars===
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set title "show title
@@ -76,9 +78,7 @@ set fileencoding=utf-8
 
 
 "===Clipboard===
-set clipboard+=unnamed
-set clipboard=unnamed
-
+set clipboard=unnamedplus
 
 "=============================
 "NeoBundle SetUp
@@ -105,6 +105,8 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'Yggdroot/indentLine'
+
 
 "=====neocomplete=====
 NeoBundle 'Shougo/neocomplete.vim'
@@ -113,7 +115,6 @@ let g:neocomplete#enable_at_startup = 1 "useneocomplete
 let g:neocomplete#enable_smart_case = 1 "use smartcase
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
 
 let g:complete#sources#dictionary#dictionaries = {
     \ 'default' : '',
@@ -157,15 +158,17 @@ NeoBundleLazy "nvie/vim-flake8", {
     \ "filetypes": ["python", "python3", "djangohtml"]
     \ }}
 
-autocmd FileType python setlocal completeopt-=preview "disable docstring
-autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-if !exists('g:neocomplete#force_omni_input_patterns')
-        let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+"autocmd FileType python setlocal completeopt-=preview "disable docstring
+"autocmd FileType python setlocal omnifunc=jedi#completions
+"let g:jedi#completions_enabled = 0
+"let g:jedi#auto_vim_configuration = 0
+"if !exists('g:neocomplete#force_omni_input_patterns')
+"        let g:neocomplete#force_omni_input_patterns = {}
+"endif
+"let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
+"===Haskell===
+NeoBundle 'kana/vim-filetype-haskell'
 
 
 call neobundle#end()
