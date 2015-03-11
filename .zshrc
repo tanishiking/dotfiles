@@ -45,6 +45,7 @@ alias mkdir='mkdir -p'
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
 
+#===Python virtual env 用
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOMR=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
