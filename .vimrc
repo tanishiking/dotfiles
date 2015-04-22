@@ -25,8 +25,8 @@ set matchpairs& matchpairs+=<:>     "add match pair <>
 set backspace=indent,eol,start  "enable to del anything by bs
 
 "===show invisible chars===
-set list
-set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
+"set list
+"set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set title "show title
 
 
@@ -178,7 +178,7 @@ filetype plugin indent on
 
 NeoBundleCheck
 
-syntax enable   "enable syntax processing
+syntax on   "enable syntax processing
 set background=dark
 "let g:solarized_termcolors=256
 let g:solarized_termtrans=1
