@@ -49,3 +49,6 @@ alias sudo='sudo '
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOMR=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
