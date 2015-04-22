@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/tanishiking/dotfiles/.vim'
 let g:netrw_dirhist_2='/home/tanishiking/programming/django_tutorial/tutorial/cms/__pycache__'
 let g:netrw_dirhist_3='/home/tanishiking/programming/django_tutorial/tutorial/mybook'
 let g:netrw_dirhist_4='/home/tanishiking/dotfiles/.vim'
+let g:netrw_dirhist_5='/services/ko-jiyasan/data/class/pages/admin/order2'
