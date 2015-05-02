@@ -80,7 +80,8 @@ set fileencoding=utf-8
 
 
 "===Clipboard===
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
+set clipboard+=unnamed
 
 "=============================
 "NeoBundle SetUp
