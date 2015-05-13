@@ -1,4 +1,4 @@
-#自動補完を有効にする
+#動補完を有効にする
 autoload -U compinit; compinit
 
 #補完で小文字でも大文字にマッチ
@@ -45,6 +45,7 @@ alias mkdir='mkdir -p'
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
 
+
 #===Python virtual env 用
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOMR=$HOME/Devel
@@ -52,3 +53,8 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH=/usr/local/bin/:$PATH # for homebrew
+export PATH=/usr/local/sbin/:$PATH # for homebrew
+eval "$(rbenv init -)"
+
