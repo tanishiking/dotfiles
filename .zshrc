@@ -42,6 +42,9 @@ alias cp='cp -i'
 alias mv='cp -i'
 alias mkdir='mkdir -p'
 
+alias ll='ls -la'
+alias 'golgo-13'='kill -9'
+
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
 
@@ -58,3 +61,5 @@ export PATH=/usr/local/bin/:$PATH # for homebrew
 export PATH=/usr/local/sbin/:$PATH # for homebrew
 eval "$(rbenv init -)"
 
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+export PATH=$HOME/.composer/vendor/bin:$PATH

@@ -1,11 +1,9 @@
 "===Spaces&Tab===
 set tabstop=4   "number of visual spaces per <TAB>
-
 set softtabstop=4   "number of spaces in tab when edditing
-
 set shiftwidth=4
 
-set expandtab   "tab to spaces(num is softtabstop)
+set expandtab   "tab to spaces(num of spaces equals to softtabstop)
 
 
 "===UI config===
@@ -14,6 +12,8 @@ set showcmd     "show commands
 
 set cursorline  "highlight cursor line
 set cursorcolumn    "show cursor column
+
+set hidden  "保存しなくてもファイルを切り替えられる
 
 filetype indent on  "load language specific indentation files ~/.vim/indent/
 
@@ -77,6 +77,7 @@ inoremap jj <esc>
 "===encoding===
 set encoding=utf-8
 set fileencoding=utf-8
+scriptencoding utf-8 "vim script encoding
 
 
 "===Clipboard===
@@ -106,6 +107,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 "===basic plugins===
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'Yggdroot/indentLine'
@@ -179,10 +181,11 @@ filetype plugin indent on
 
 NeoBundleCheck
 
+set t_Co=256    "256色モード
+
 syntax on   "enable syntax processing
 set background=dark
 "let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
 
-set t_Co=256
