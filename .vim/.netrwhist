@@ -1,11 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/tanishiking/dotfiles/.vim'
-let g:netrw_dirhist_2='/home/tanishiking/programming/django_tutorial/tutorial/cms/__pycache__'
-let g:netrw_dirhist_3='/home/tanishiking/programming/django_tutorial/tutorial/mybook'
-let g:netrw_dirhist_4='/home/tanishiking/dotfiles/.vim'
-let g:netrw_dirhist_5='/home/tanishiking/programming/calendar_app/calendarapp'
-let g:netrw_dirhist_6='/Users/tanishiking/prog/gappyo/gappyo'
-let g:netrw_dirhist_7='/Users/tanishiking/prog/gappyo/gappyo/templates'
-let g:netrw_dirhist_8='/Users/tanishiking/dev/HaScheme/src'
-let g:netrw_dirhist_9='/Users/tanishiking/dev/sasm/sasm'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/tanishiking/dev/InfrA/app/Http/Requests'
+let g:netrw_dirhist_2='/Users/tanishiking/dev/InfrA/app/Http'
+let g:netrw_dirhist_3='/Users/tanishiking/dev/InfrA/database/migrations'
