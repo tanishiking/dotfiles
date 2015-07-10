@@ -3,6 +3,12 @@ set tabstop=4   "number of visual spaces per <TAB>
 set softtabstop=4   "number of spaces in tab when edditing
 set shiftwidth=4
 
+augroup vimrc_autocmd
+autocmd! FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd! FileType css  setlocal shiftwidth=4 softtabstop=2 tabstop=2
+augroup END
+    
+
 set expandtab   "tab to spaces(num of spaces equals to softtabstop)
 
 
@@ -84,6 +90,10 @@ scriptencoding utf-8 "vim script encoding
 "set clipboard=unnamedplus
 set clipboard+=unnamed
 
+"===Browser View
+nnoremap <C-p> :!open %<CR>
+
+
 "=============================
 "NeoBundle SetUp
 "=============================
@@ -111,6 +121,11 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'Yggdroot/indentLine'
+
+
+"===Easy Align===
+NeoBundle 'junegunn/vim-easy-align'
+vnoremap <silent> <Enter> :EasyAlign<CR>
 
 
 "=====neocomplete=====
@@ -153,7 +168,6 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 "===html css js jquery===
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css-syntax'
-NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'pangloss/vim-javascript'
 
 "===Python===
