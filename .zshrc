@@ -33,6 +33,10 @@ PROMPT="
 [%n] %{${fg[yellow]}%}%~%{${reset_color}%}
 %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*'-') <!(*;-;%)? <)%{${reset_color}%} "
 
+function command_not_found_handler() {
+    cowsay Command not found!!
+}
+
 #キーバインドvim
 bindkey -v
 
@@ -50,9 +54,11 @@ alias sudo='sudo '
 
 
 #===Python virtual env 用
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOMR=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOMR=$HOME/Devel
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
