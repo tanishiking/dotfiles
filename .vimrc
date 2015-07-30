@@ -189,6 +189,14 @@ NeoBundleLazy "nvie/vim-flake8", {
 "===Haskell===
 NeoBundle 'kana/vim-filetype-haskell'
 
+"===MARKDOWN===
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+
+au BufRead,BufNewFile *.md set filetype=markdown
+
+
 
 call neobundle#end()
 filetype plugin indent on
