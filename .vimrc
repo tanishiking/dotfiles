@@ -23,13 +23,8 @@ set tabstop=4
 set softtabstop=4
 " インデントの空白数
 set shiftwidth=4
-" タブをホワイト空白に
+" タブを空白に
 set expandtab
-
-augroup vimrc_autocmd
-  autocmd! FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2
-  autocmd! FileType css  setlocal shiftwidth=4 softtabstop=2 tabstop=2
-augroup END
 
 
 "===UI config===
