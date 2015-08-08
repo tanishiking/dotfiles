@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/tanishiking/dev/InfrA/app/Http/Requests'
-let g:netrw_dirhist_2='/Users/tanishiking/dev/InfrA/app/Http'
-let g:netrw_dirhist_3='/Users/tanishiking/dev/InfrA/database/migrations'
