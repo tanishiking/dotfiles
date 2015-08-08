@@ -69,7 +69,7 @@ set backupdir=.,~/tmp.~/
 
 "===Searching===
 " インクリメンタルサーチするぞ
-set incsearch
+"set incsearch
 " 検索結果ハイライト
 set hlsearch
 
