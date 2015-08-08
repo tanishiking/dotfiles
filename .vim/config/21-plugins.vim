@@ -13,3 +13,6 @@ NeoBundle 'Yggdroot/indentLine'
 "===Easy Align===
 NeoBundle 'junegunn/vim-easy-align'
 vnoremap <silent> <Enter> :EasyAlign<CR>
+
+"===lightline.vim===
+NeoBundle 'itchyny/lightline.vim'
