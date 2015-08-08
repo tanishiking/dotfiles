@@ -1,11 +1,18 @@
+"===encoding===
+set encoding=utf-8
+set fileencoding=utf-8
+" vim script encoding
+scriptencoding utf-8
+
+
 "===Spaces&Tab===
 set tabstop=4   "number of visual spaces per <TAB>
 set softtabstop=4   "number of spaces in tab when edditing
 set shiftwidth=4
 
 augroup vimrc_autocmd
-autocmd! FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2
-autocmd! FileType css  setlocal shiftwidth=4 softtabstop=2 tabstop=2
+  autocmd! FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2
+  autocmd! FileType css  setlocal shiftwidth=4 softtabstop=2 tabstop=2
 augroup END
     
 
@@ -13,47 +20,61 @@ set expandtab   "tab to spaces(num of spaces equals to softtabstop)
 
 
 "===UI config===
-set number  "show line numbers
-set showcmd     "show commands
+" 行番号を表示する
+set number
 
-set cursorline  "highlight cursor line
-set cursorcolumn    "show cursor column
+" コマンドを表示
+set showcmd
 
-set hidden  "保存しなくてもファイルを切り替えられる
+" カーソル行をハイライトする
+set cursorline
+" カーソル列をハイライト
+set cursorcolumn
+"保存しなくてもファイルを切り替えられる
+set hidden 
 
 filetype indent on  "load language specific indentation files ~/.vim/indent/
 
-set wildmenu    "visual autocomplete for command menu
-set lazyredraw  "redraw only when you type :redraw!
-set showmatch   "hilight matching [{()}]
-set matchpairs& matchpairs+=<:>     "add match pair <>
+" コマンドもオートコンプリートする
+set wildmenu
+" :redraw! のときにredrow
+set lazyredraw
+"[{()}] とかのマッチをハイライトする
+set showmatch
+" <>もマッチして欲しい
+set matchpairs& matchpairs+=<:>
+" backspace でこれらも削除したい
+set backspace=indent,eol,start
 
-set backspace=indent,eol,start  "enable to del anything by bs
+" 不可視文字の表示
+set list
+set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
+" ファイル名表示
+set title 
 
-"===show invisible chars===
-"set list
-"set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
-set title "show title
 
 
 "===Searching===
-set incsearch    "enable to incremental search
-
-set hlsearch    "hilight matches
+" インクリメンタルサーチするぞ
+set incsearch   
+" マッチした部分をハイライト
+set hlsearch
 
 nnoremap <leader><space> :nohlsearch<CR>
-"ignore case when searching
+" 検索するとき大文字小文字を区別しない
 set ignorecase
 set smartcase
 
 "===backup===
+" swapファイルつくらない
 set noswapfile
 
 
 "===Folding===
-set foldenable  "enable to fold
-
-set foldlevelstart=10   "open most folds default
+" foldするぞ！
+set foldenable
+"open most folds default
+set foldlevelstart=10
 
 set foldnestmax=10
 "nnoremap <space> za
@@ -75,22 +96,15 @@ nnoremap gV `[v`]
 
 
 "===Leader Shortcuts===
-"let mapleader=","
+" exc を 
 inoremap jj <esc>
 "jk is espacpe
 
-
-"===encoding===
-set encoding=utf-8
-set fileencoding=utf-8
-scriptencoding utf-8 "vim script encoding
-
-
 "===Clipboard===
-"set clipboard=unnamedplus
 set clipboard+=unnamed
 
 "===Browser View
+" C-p でブラウザを開く
 nnoremap <C-p> :!open %<CR>
 
 
