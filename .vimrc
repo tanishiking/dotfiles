@@ -1,38 +1,94 @@
-"===encoding===
+if &nocompatible
+    set compatible
+endif
+
+" vim
 set encoding=utf-8
-set fileencoding=utf-8
 " vim script encoding
 scriptencoding utf-8
+" ファイルを開く際のエンコーディング
+set fileencoding=utf-8
 
+"256色モード
+set t_Co=256
+
+syntax on
 
 "===Spaces&Tab===
-set tabstop=4   "number of visual spaces per <TAB>
-set softtabstop=4   "number of spaces in tab when edditing
+" 改行時の自動インデントとスマートインデントをおこなう
+set autoindent smartindent
+"<TAB> によって見えるスペースの数
+set tabstop=4
+" <TAB> によって入力されるスペースの数
+set softtabstop=4
 set shiftwidth=4
+" タブをホワイトスペースに
+set expandtab
 
 augroup vimrc_autocmd
   autocmd! FileType html setlocal shiftwidth=2 softtabstop=2 tabstop=2
   autocmd! FileType css  setlocal shiftwidth=4 softtabstop=2 tabstop=2
 augroup END
-    
-
-set expandtab   "tab to spaces(num of spaces equals to softtabstop)
 
 
 "===UI config===
 " 行番号を表示する
 set number
-
 " コマンドを表示
 set showcmd
-
 " カーソル行をハイライトする
 set cursorline
 " カーソル列をハイライト
 set cursorcolumn
 "保存しなくてもファイルを切り替えられる
-set hidden 
+set hidden
+" ファイルを保存をしてないときにファイル保存を確認する
+set confirm
+"ビープ恩の代わりに画面をフラッシュ
+set visualbell
+" 画面フラッシュもオフ
+set t_vb=
+" すべてのモードでマウス有効
+set mouse=a
 
+" マッピングはタイムアウトなし
+" キーコードはタイムアウトあり
+set notimeout ttimeout ttimeoutlen=200
+
+" swapファイルつくらない
+set noswapfile
+
+" バックアップ
+" 上書きに失敗した場合のみバックアップをつくる
+set nobackup
+set writebackup
+" バックアップファイルの場所
+set backupdir=.,~/tmp.~/
+
+
+"===Searching===
+" インクリメンタルサーチするぞ
+set incsearch
+" 検索結果ハイライト
+set hlsearch
+
+nnoremap <leader><space> :nohlsearch<CR>
+" 小文字なら大文字を無視 大文字なら大文字も検索
+set smartcase
+"set ignorecase
+
+
+" ===表示設定===
+" ステータスラインを常に表示
+set laststatus=2
+" コマンドラインの行数
+set cmdheight=1
+
+" ウィンドウの最後の行も省略せずに表示
+set display=lastline
+
+
+" === インデント ===
 filetype indent on  "load language specific indentation files ~/.vim/indent/
 
 " コマンドもオートコンプリートする
@@ -50,24 +106,12 @@ set backspace=indent,eol,start
 set list
 set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 " ファイル名表示
-set title 
+set title
 
 
 
-"===Searching===
-" インクリメンタルサーチするぞ
-set incsearch   
-" マッチした部分をハイライト
-set hlsearch
 
-nnoremap <leader><space> :nohlsearch<CR>
-" 検索するとき大文字小文字を区別しない
-set ignorecase
-set smartcase
 
-"===backup===
-" swapファイルつくらない
-set noswapfile
 
 
 "===Folding===
@@ -185,7 +229,6 @@ NeoBundle 'hail2u/vim-css-syntax'
 NeoBundle 'pangloss/vim-javascript'
 
 "===Python===
-
 NeoBundleLazy "nvie/vim-flake8", {
     \ "autoload": {
     \ "filetypes": ["python", "python3", "djangohtml"]
@@ -211,15 +254,12 @@ NeoBundle 'tyru/open-browser.vim'
 au BufRead,BufNewFile *.md set filetype=markdown
 
 
-
 call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
 
-set t_Co=256    "256色モード
 
-syntax on   "enable syntax processing
 set background=dark
 "let g:solarized_termcolors=256
 let g:solarized_termtrans=1
