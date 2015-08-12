@@ -75,14 +75,18 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # for homebrew
 add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
-eval "$(rbenv init -)"
+if [ -f /usr/local/bin/rbenv ]; then
+	eval "$(rbenv init -)"
+fi
 
 #export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-add_path_if_exists $(brew prefix homebrew/php/php56)
-export PATH=$HOME/.composer/vendor/bin:$PATH
+if [ -f /usr/local/bin/brew ]; then
+	add_path_if_exists $(brew prefix homebrew/php/php56)
+	add_path_if_exists $HOME/.composer/vendor/bin
+fi
 
 ### nvm
-if [ $(brew --prefix nvm)/nvm.sh ]; then
+if [ -f /usr/local/bin/brew ] && [ $(brew --prefix nvm)/nvm.sh ]; then
     export NVM_DIR=~/.nvm
     #Lazy
     nvm() {
@@ -92,5 +96,4 @@ if [ $(brew --prefix nvm)/nvm.sh ]; then
     }
 fi
 
-export PATH=$HOME/.local/bin:$PATH
-
+add_path_if_exists PATH=$HOME/.local/bin:$PATH
