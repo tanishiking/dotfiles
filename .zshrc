@@ -33,10 +33,6 @@ PROMPT="
 [%n] %{${fg[yellow]}%}%~%{${reset_color}%}
 %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*'-') <!(*;-;%)? <)%{${reset_color}%} "
 
-function command_not_found_handler() {
-    cowsay Command not found!!
-}
-
 #キーバインドvim
 bindkey -v
 
