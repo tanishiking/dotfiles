@@ -77,7 +77,8 @@ add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
 eval "$(rbenv init -)"
 
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+add_path_if_exists $(brew prefix homebrew/php/php56)
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
 ### nvm
