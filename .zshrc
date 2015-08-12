@@ -1,3 +1,16 @@
+# .zshrc
+#
+#
+# Copyright (c) 2014 - 2015, Rikito Taniguchi
+
+
+function add_path_if_exists() {
+    if [ -d "$1" ]; then
+        export PATH="$1:$PATH"
+    fi
+}
+
+
 #動補完を有効にする
 autoload -U compinit; compinit
 
@@ -59,16 +72,24 @@ fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export PATH=/usr/local/bin/:$PATH # for homebrew
-export PATH=/usr/local/sbin/:$PATH # for homebrew
+# for homebrew
+add_path_if_exists /usr/local/bin
+add_path_if_exists /usr/local/sbin
 eval "$(rbenv init -)"
 
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
 ### nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+if [ $(brew --prefix nvm)/nvm.sh ]; then
+    export NVM_DIR=~/.nvm
+    #Lazy
+    nvm() {
+        unset -f nvm
+        source $(brew --prefix nvm)/nvm.sh
+        nvm "$@"
+    }
+fi
 
 export PATH=$HOME/.local/bin:$PATH
 
