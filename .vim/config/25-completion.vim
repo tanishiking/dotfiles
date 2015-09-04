@@ -33,7 +33,7 @@ if has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
 
     " reccoment key mapping
     " <CR>: close popup and save indent
-    inoremap <silent><CR><C-r> = <SID>my_cr_function()<CR>
+    "inoremap <silent><CR><C-r> = <SID>my_cr_function()<CR>
     function! s:my_cr_function()
         return neocomplete#close_popup()
     endfunction
