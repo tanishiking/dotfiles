@@ -138,6 +138,9 @@ inoremap jj <esc>
 "===Clipboard===
 set clipboard+=unnamed
 
+"===json===
+let g:vim_json_syntax_conceal = 0
+
 " 外部ファイルを読み込み
 runtime! config/*.vim
 
