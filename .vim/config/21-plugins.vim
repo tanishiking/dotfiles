@@ -23,3 +23,6 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+"===vim-json===
+NeoBundle 'elzr/vim-json'
+let g:vim_json_syntax_conceal = 0
