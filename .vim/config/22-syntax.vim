@@ -5,4 +5,8 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css-syntax'
 " javascript
 NeoBundle 'pangloss/vim-javascript'
-
+" coq
+NeoBundleLazy 'jvoorhis/coq.vim', {
+\ 'autoload' : {
+\   'filetypes' : 'coq'
+\ }}
