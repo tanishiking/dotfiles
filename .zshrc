@@ -23,8 +23,6 @@ setopt correct
 #色
 autoload -U colors; colors
 
-#ls
-
 #補完候補もLS_COLORSに合わせて色付け
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
