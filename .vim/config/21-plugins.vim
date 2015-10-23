@@ -26,3 +26,10 @@ map g/ <Plug>(incsearch-stay)
 "===vim-json===
 NeoBundle 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
+
+"===MARKDOWN===
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+
+au BufRead, BufNewFile *.md set filetype=markdown
