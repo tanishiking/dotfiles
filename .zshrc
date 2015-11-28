@@ -20,6 +20,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 #もしかして
 setopt correct
 
+# ビープ音をOFF
+setopt no_beep
+
 #色
 autoload -U colors; colors
 
