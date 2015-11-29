@@ -1,15 +1,13 @@
 # dotfiles
+- .zshrc
+- .vimrc
+- .vim/
 
----
-
--.zshrc
-
--.vimrc
-
--.vim/
-
-Please make symbolic links like~
-
-    ln -sf ~/dotfiles/.zshrc ~/.vimrc
-    ln -sf ~/dotfiles/.vimrc ~/.vimrc
-    ln -sf ~/dotfiles/.vim ~/.vim
+## setup
+1. `cd`
+2. `git clone git@github.com:tanishiking/dotfiles.git`
+3. `cd dotfiles`
+4. `git submodule init`
+5. `git submodule update`
+6. `./init.sh`
+7. open vim and exec `:NeoBundleInstall`
