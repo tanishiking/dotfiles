@@ -10,3 +10,4 @@ NeoBundleLazy 'jvoorhis/coq.vim', {
 \ 'autoload' : {
 \   'filetypes' : 'coq'
 \ }}
+NeoBundle 'derekwyatt/vim-scala'
