@@ -22,6 +22,7 @@ setopt correct
 
 # ビープ音をOFF
 setopt no_beep
+setopt nolistbeep
 
 #色
 autoload -U colors; colors
