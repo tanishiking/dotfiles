@@ -33,3 +33,8 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 
 au BufRead, BufNewFile *.md set filetype=markdown
+
+"===caw.vim===
+NeoBundle 'tyru/caw.vim.git'
+nmap <Leader>c <Plug>(caw:i:toggle)
+vmap <Leader>c <Plug>(caw:i:toggle)
