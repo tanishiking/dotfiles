@@ -38,3 +38,6 @@ au BufRead, BufNewFile *.md set filetype=markdown
 NeoBundle 'tyru/caw.vim.git'
 nmap <Leader>c <Plug>(caw:i:toggle)
 vmap <Leader>c <Plug>(caw:i:toggle)
+
+"===vim-surround===
+NeoBundle 'tpope/vim-surround'
