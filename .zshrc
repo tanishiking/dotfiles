@@ -82,22 +82,11 @@ fi
 
 #export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 if [ -f /usr/local/bin/brew ]; then
-	add_path_if_exists $(brew --prefix homebrew/php/php56)
-	add_path_if_exists $HOME/.composer/vendor/bin
+  add_path_if_exists $(brew --prefix homebrew/php/php56)
+  add_path_if_exists $HOME/.composer/vendor/bin
 fi
 
 ### nodebrew
 export PATH=$PATH:$HOME/.nodebrew/current/bin:$PATH
-
-### nvm
-if [ -f /usr/local/bin/brew ] && [ $(brew --prefix nvm)/nvm.sh ]; then
-    export NVM_DIR=~/.nvm
-    #Lazy
-    nvm() {
-        unset -f nvm
-        source $(brew --prefix nvm)/nvm.sh
-        nvm "$@"
-    }
-fi
 
 add_path_if_exists PATH=$HOME/.local/bin:$PATH
