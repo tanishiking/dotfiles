@@ -58,7 +58,6 @@ alias mv='cp -i'
 alias mkdir='mkdir -p'
 
 alias ll='ls -la'
-alias 'golgo-13'='kill -9'
 
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
@@ -86,6 +85,9 @@ if [ -f /usr/local/bin/brew ]; then
 	add_path_if_exists $(brew --prefix homebrew/php/php56)
 	add_path_if_exists $HOME/.composer/vendor/bin
 fi
+
+### nodebrew
+export PATH=$PATH:$HOME/.nodebrew/current/bin:$PATH
 
 ### nvm
 if [ -f /usr/local/bin/brew ] && [ $(brew --prefix nvm)/nvm.sh ]; then
