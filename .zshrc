@@ -86,6 +86,13 @@ if [ -f /usr/local/bin/brew ]; then
   add_path_if_exists $HOME/.composer/vendor/bin
 fi
 
+
+export PHP_ROOT="${HOME}/.phpenv"
+if [ -d "${PHP_ROOT}" ]; then
+    export PATH=${PHP_ROOT}/bin:$PATH
+    eval $(phpenv init - zsh)
+fi
+
 ### nodebrew
 export PATH=$PATH:$HOME/.nodebrew/current/bin:$PATH
 
