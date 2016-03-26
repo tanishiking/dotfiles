@@ -1,3 +1,7 @@
-.vim/bundle/*
-!.vim/bundle/neobundle.vim
+.DS_Store
+*.swp
 .vim/.netrwhist
+.vim/dein/*
+.vim/dein/repos/github.com/*
+.vim/dein/repos/github.com/Shougo/*
+!.vim/dein/repos/github.com/Shougo/dein.vim

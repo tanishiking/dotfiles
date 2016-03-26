@@ -1,9 +1,7 @@
 " Auto Completion
 if has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
-    " neocomplete
-    NeoBundleLazy 'Shougo/neocomplete.vim', {
-                \       'autoload': {'insert': 1}
-                \ }
+  " neocomplete
+  if dein#tap('neocomplete.vim')
 
     "disable autocomplPop
     let g:acp_enableAtStartup = 0
@@ -44,4 +42,5 @@ if has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
     "<C-h> <BS> : close popup and delete backword char
     inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
     inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  endif
 endif
