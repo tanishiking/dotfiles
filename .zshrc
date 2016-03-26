@@ -90,7 +90,7 @@ fi
 export PHP_ROOT="${HOME}/.phpenv"
 if [ -d "${PHP_ROOT}" ]; then
     export PATH=${PHP_ROOT}/bin:$PATH
-    eval $(phpenv init - zsh)
+    eval "$(phpenv init - zsh)"
 fi
 
 ### nodebrew
