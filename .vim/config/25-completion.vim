@@ -29,6 +29,9 @@ if has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
     inoremap <expr><C-g> neocomplete#undo_completion()
     inoremap <expr><C-l> neocomplete#complete_common_string()
 
+    " Enable completion
+    autocmd FileType python setlocal omnifunc=python3complete#Complete
+
     " reccoment key mapping
     " <CR>: close popup and save indent
     "inoremap <silent><CR><C-r> = <SID>my_cr_function()<CR>
