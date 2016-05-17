@@ -19,8 +19,3 @@ if dein#tap('caw.vim')
   nmap <Leader>c <Plug>(caw:tildepos:toggle)
   vmap <Leader>c <Plug>(caw:tildepos:toggle)
 endif
-
-
-if dein#tap('vim-markdown.vim')
-  let g:vim_markdown_folding_disabled = 1
-endif
