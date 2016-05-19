@@ -49,7 +49,7 @@ PROMPT="
 %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*'-') <!(*;-;%)? <)%{${reset_color}%} "
 
 #キーバインドvim
-bindkey -v
+bindkey -e
 
 #エイリアス
 alias rm='rm -i'
