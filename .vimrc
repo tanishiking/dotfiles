@@ -135,7 +135,6 @@ nnoremap gV `[v`]
 
 "===Leader Shortcuts===
 " jj is espacpe
-inoremap jj <esc>
 
 "===Clipboard===
 set clipboard+=unnamed
