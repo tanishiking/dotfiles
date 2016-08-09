@@ -1,3 +1,7 @@
+" merlin
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
 " neocomplete
 if dein#tap('neocomplete.vim')
 
@@ -10,7 +14,6 @@ if dein#tap('neocomplete.vim')
   "3文字
   let g:neocomplete#sources#syntax#min_keyword_length = 3
   let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
   " define directory
   let g:complete#sources#dictionary#dictionaries = {
       \ 'default' : '',
@@ -18,6 +21,7 @@ if dein#tap('neocomplete.vim')
       \ 'scheme' : $HOME.'/.gosh_completions',
       \ 'scala' : $HOME.'/.vim/dict/scala.dict'
           \ }
+  " merlin
 
   if !exists('g:neocomplete#keyword_patterns')
           let g:neocomplete#keyword_patterns = {}
@@ -44,4 +48,9 @@ if dein#tap('neocomplete.vim')
   "<C-h> <BS> : close popup and delete backword char
   inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
   inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+  endif
+  " For merlin
+  let g:neocomplete#sources#omni#input_patterns.ocaml = '[^. *\t]\.\w*\|\h\w*|#'
 endif

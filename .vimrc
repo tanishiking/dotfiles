@@ -139,6 +139,8 @@ nnoremap gV `[v`]
 "===Clipboard===
 set clipboard+=unnamed
 
+filetype plugin on
+
 " 外部ファイルを読み込み
 runtime! config/*.vim
 
