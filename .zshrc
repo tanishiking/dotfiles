@@ -9,6 +9,16 @@ function add_path_if_exists() {
         export PATH="$1:$PATH"
     fi
 }
+# 履歴ファイルの保存先
+export HISTFILE=${HOME}/.zsh_history
+# # メモリに保存される履歴の件数
+export HISTSIZE=1000
+# # 履歴ファイルに保存される履歴の件数
+export SAVEHIST=100000
+# # 重複を記録しない
+setopt hist_ignore_dups
+# # 開始と終了を記録
+setopt EXTENDED_HISTORY
 
 
 #動補完を有効にする
@@ -53,8 +63,6 @@ bindkey -e
 
 #エイリアス
 alias rm='rm -i'
-alias cp='cp -i'
-alias mv='cp -i'
 alias mkdir='mkdir -p'
 
 alias ll='ls -la'
@@ -97,3 +105,12 @@ fi
 export PATH=$PATH:$HOME/.nodebrew/current/bin:$PATH
 
 add_path_if_exists PATH=$HOME/.local/bin:$PATH
+
+export XDG_DATA_HOME=/usr/local/share
+if [ -f /usr/local/bin/rbenv ]; then
+    eval "$(plenv init -)"
+fi
+
+export GOPATH="$HOME/.go"
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$HOME/bin"
