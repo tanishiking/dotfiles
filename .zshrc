@@ -1,8 +1,4 @@
 # .zshrc
-#
-#
-# Copyright (c) 2014 - 2015, Rikito Taniguchi
-
 
 function add_path_if_exists() {
     if [ -d "$1" ]; then
@@ -111,6 +107,7 @@ if [ -f /usr/local/bin/rbenv ]; then
     eval "$(plenv init -)"
 fi
 
+# Go
 export GOPATH="$HOME/.go"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/bin"
