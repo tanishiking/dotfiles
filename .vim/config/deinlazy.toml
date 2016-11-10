@@ -55,6 +55,10 @@ repo = "nvie/vim-flake8"
 on_ft = 'python'
 
 [[plugins]]
+repo = 'hotchpotch/perldoc-vim'
+on_ft = 'perl'
+
+[[plugins]]
 repo = 'Shougo/neocomplete.vim'
 disabled = '!has("lua")'
 on_i = 1
