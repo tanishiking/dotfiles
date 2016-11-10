@@ -10,4 +10,3 @@
 4. `git submodule init`
 5. `git submodule update`
 6. `./init.sh`
-7. open vim and exec `:NeoBundleInstall`
