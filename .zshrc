@@ -5,6 +5,17 @@ function add_path_if_exists() {
         export PATH="$1:$PATH"
     fi
 }
+
+function load_library() {
+    if [ -f $1 ]; then
+        . $1
+    fi
+}
+
+function _command_exists() {
+    hash "$1" 2>/dev/null
+}
+
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
 # # メモリに保存される履歴の件数
@@ -66,7 +77,6 @@ alias ll='ls -la'
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
 
-
 #===Python virtual env 用
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
@@ -111,3 +121,5 @@ fi
 export GOPATH="$HOME/.go"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/bin"
+
+load_library $ZDOTDIR/peco.zsh
