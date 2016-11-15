@@ -74,5 +74,9 @@ on_ft = 'snippet'
 hook_source = 'source ~/.vim/config/plugins/neosnippet.vim'
 
 [[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = 'coffee'
+
+[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 on_i = 1
