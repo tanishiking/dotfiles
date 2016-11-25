@@ -80,3 +80,7 @@ on_ft = 'coffee'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 on_i = 1
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
