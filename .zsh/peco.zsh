@@ -17,6 +17,8 @@ if _command_exists peco; then
   bindkey '^R' peco-history-selection
 
   function connpass() {
+    local CONNPASS_API_URL='https://connpass.com/api/v1/event/'
+    local CONNPASS_EVENT_URL='http://connpass.com/event/'
     local keyword=""
     for i in `seq 1 ${#}`; do
       if [ $i -eq 1 ];then
@@ -26,10 +28,7 @@ if _command_exists peco; then
       fi
       shift
     done
-    echo $keyword
-    CONNPASS_API_URL='https://connpass.com/api/v1/event/'
-    CONNPASS_EVENT_URL='http://connpass.com/event/'
-    event_id=$(curl "$CONNPASS_API_URL?keyword=$keyword" 2> /dev/null | jq -r '.events[] | "\(.event_id) \(.started_at) \(.title)"' | peco | awk '{print $1}')
+    local event_id=$(curl "$CONNPASS_API_URL?keyword=$keyword" 2> /dev/null | jq -r '.events[] | "\(.event_id) \(.started_at) \(.title)"' | peco | awk '{print $1}')
     if [ "$event_id" != '' ]; then
       open "$CONNPASS_EVENT_URL/$event_id"
     fi
