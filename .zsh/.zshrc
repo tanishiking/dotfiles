@@ -110,9 +110,9 @@ if [ -d "${PHP_ROOT}" ]; then
 fi
 
 ### nodebrew
-export PATH=$PATH:$HOME/.nodebrew/current/bin:$PATH
+add_path_if_exists $HOME/.nodebrew/current/bin
 
-add_path_if_exists PATH=$HOME/.local/bin:$PATH
+add_path_if_exists $HOME/.local/bin
 
 export XDG_DATA_HOME=/usr/local/share
 if [ -f /usr/local/bin/rbenv ]; then
