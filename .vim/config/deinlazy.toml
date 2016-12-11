@@ -84,3 +84,8 @@ on_i = 1
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
 on_ft = 'typescript'
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = 'tex'
+hook_source = 'source ~/.vim/config/plugins/tex.vim'
