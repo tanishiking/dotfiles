@@ -126,7 +126,7 @@ fi
 ### golang ###
 export GOPATH="$HOME/dev/go"
 if [ -d "$HOME/dev/go" ]; then
-    export GOPATH="$HOME/dev/go"
+    export GOPATH="$HOME/dev"
 fi
 add_path_if_exists $GOPATH/bin
 

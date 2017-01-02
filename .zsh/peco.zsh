@@ -33,4 +33,17 @@ if _command_exists peco; then
       open "$CONNPASS_EVENT_URL/$event_id"
     fi
   }
+
+  if _command_exists ghq; then
+    bindkey '^]' peco-src
+    function peco-src() {
+      local src=$(ghq list --full-path | peco --query "$LBUFFER")
+      if [ -n "$src" ]; then
+        BUFFER="cd $src"
+        zle accept-line
+      fi
+      zle -R -c
+    }
+    zle -N peco-src
+  fi
 fi
