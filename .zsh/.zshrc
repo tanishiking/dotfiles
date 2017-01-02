@@ -76,6 +76,10 @@ alias mkdir='mkdir -p'
 
 alias ll='ls -la'
 
+if _command_exists peco; then
+  alias git-tree='tree -I $(cat .gitignore | grep -v "^\s*#" | grep -v "^\s*$" | tr "\n" "|")'
+fi
+
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
 
@@ -119,9 +123,11 @@ if [ -f /usr/local/bin/rbenv ]; then
     eval "$(plenv init -)"
 fi
 
-# Go
-export GOPATH="$HOME/.go"
-export PATH="$PATH:$GOPATH/bin"
-export PATH="$PATH:$HOME/bin"
+### golang ###
+export GOPATH="$HOME/dev/go"
+if [ -d "$HOME/dev/go" ]; then
+    export GOPATH="$HOME/dev/go"
+fi
+add_path_if_exists $GOPATH/bin
 
 load_library $ZDOTDIR/peco.zsh
