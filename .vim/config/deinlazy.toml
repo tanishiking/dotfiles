@@ -89,3 +89,7 @@ on_ft = 'typescript'
 repo = 'lervag/vimtex'
 on_ft = 'tex'
 hook_source = 'source ~/.vim/config/plugins/tex.vim'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
