@@ -1,7 +1,5 @@
 # .zshrc
 
-export ZDOTDIR="${HOME}/.zsh"
-
 function add_path_if_exists() {
     if [ -d "$1" ]; then
         export PATH="$1:$PATH"
@@ -130,4 +128,4 @@ if [ -d "$HOME/dev/go" ]; then
 fi
 add_path_if_exists $GOPATH/bin
 
-load_library $ZDOTDIR/peco.zsh
+load_library $HOME/peco.zsh

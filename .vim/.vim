@@ -1,0 +1,1 @@
+/Users/tanishiking/dotfiles/.vim
