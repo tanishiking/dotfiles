@@ -127,4 +127,4 @@ if [ -d "$HOME/dev" ]; then
 fi
 add_path_if_exists $GOPATH/bin
 
-load_library $HOME/peco.zsh
+load_library $ZDOTDIR/peco.zsh
