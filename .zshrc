@@ -122,8 +122,7 @@ if [ -f /usr/local/bin/rbenv ]; then
 fi
 
 ### golang ###
-export GOPATH="$HOME/dev/go"
-if [ -d "$HOME/dev/go" ]; then
+if [ -d "$HOME/dev" ]; then
     export GOPATH="$HOME/dev"
 fi
 add_path_if_exists $GOPATH/bin
