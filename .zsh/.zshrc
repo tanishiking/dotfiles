@@ -24,6 +24,8 @@ export HISTSIZE=1000
 export SAVEHIST=100000
 # # 重複を記録しない
 setopt hist_ignore_dups
+# zsh 間でhistoryを共有
+setopt share_history
 # # 開始と終了を記録
 setopt EXTENDED_HISTORY
 
