@@ -12,7 +12,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
-on_ft = 'md'
+on_ft = 'markdown'
 
 [[plugins]]
 repo = 'kannokanno/previm'
