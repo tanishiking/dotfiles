@@ -129,4 +129,7 @@ if [ -d "$HOME/dev" ]; then
 fi
 add_path_if_exists $GOPATH/bin
 
+### diff-highlight ###
+add_path_if_exists /usr/local/share/git-core/contrib/diff-highlight
+
 load_library $ZDOTDIR/peco.zsh
