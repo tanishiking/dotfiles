@@ -31,7 +31,8 @@ setopt EXTENDED_HISTORY
 
 
 #動補完を有効にする
-autoload -U compinit; compinit
+autoload -U compinit
+compinit
 
 #補完で小文字でも大文字にマッチ
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -82,13 +83,6 @@ fi
 
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
-
-#===Python virtual env 用
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOMR=$HOME/Devel
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
