@@ -27,3 +27,6 @@ repo = 'tyru/caw.vim.git'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
