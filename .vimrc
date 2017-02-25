@@ -132,6 +132,7 @@ nnoremap E $
 "hilight last inserted line
 nnoremap gV `[v`]
 
+nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 
 "===Leader Shortcuts===
 " jj is espacpe
