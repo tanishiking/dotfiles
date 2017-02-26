@@ -63,6 +63,8 @@ set writebackup
 " バックアップファイルの場所
 set backupdir=.,~/tmp.~/
 
+"===tab===
+set showtabline=2
 
 "===Searching===
 " インクリメンタルサーチするぞ
