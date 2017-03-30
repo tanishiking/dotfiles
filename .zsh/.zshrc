@@ -97,6 +97,11 @@ if [ -f /usr/local/bin/brew ]; then
   add_path_if_exists $HOME/.composer/vendor/bin
 fi
 
+# JAVA_HOME
+if [ -f /usr/libexec/java_home ]; then
+  export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+fi
+
 
 export PHP_ROOT="${HOME}/.phpenv"
 if [ -d "${PHP_ROOT}" ]; then
