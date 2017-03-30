@@ -77,10 +77,6 @@ alias mkdir='mkdir -p'
 
 alias ll='ls -la'
 
-if _command_exists peco; then
-  alias git-tree='tree -I $(cat .gitignore | grep -v "^\s*#" | grep -v "^\s*$" | tr "\n" "|")'
-fi
-
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
 
@@ -90,6 +86,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # for homebrew
 add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
+
 if [ -f /usr/local/bin/rbenv ]; then
 	eval "$(rbenv init -)"
 fi
