@@ -115,7 +115,7 @@ add_path_if_exists $HOME/.nodebrew/current/bin
 add_path_if_exists $HOME/.local/bin
 
 export XDG_DATA_HOME=/usr/local/share
-if [ -f /usr/local/bin/rbenv ]; then
+if [ -f /usr/local/bin/plenv ]; then
     eval "$(plenv init -)"
 fi
 
