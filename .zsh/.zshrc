@@ -129,3 +129,9 @@ add_path_if_exists $GOPATH/bin
 add_path_if_exists /usr/local/share/git-core/contrib/diff-highlight
 
 load_library $ZDOTDIR/peco.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tanishiking/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc'; fi
