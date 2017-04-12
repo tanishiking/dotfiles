@@ -68,7 +68,7 @@ PROMPT="
 [%n] %{${fg[yellow]}%}%~%{${reset_color}%}
 %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(っ´∀｀)っ!(;・∀・%)<)%{${reset_color}%} "
 
-#キーバインドvim
+#キーバインドemacs
 bindkey -e
 
 #エイリアス
