@@ -46,4 +46,13 @@ if _command_exists peco; then
     }
     zle -N peco-src
   fi
+
+  if _command_exists git; then
+    function git-grep-edit() {
+      local src=$(git grep -n $1 | peco | awk -F: '{print "+" $2 " " $1}')
+      if [ -n "$src" ]; then
+        eval "$EDITOR $src"
+      fi
+    }
+  fi
 fi
