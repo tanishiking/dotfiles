@@ -84,7 +84,7 @@ alias sudo='sudo '
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # for homebrew
-add_path_if_exists /usr/local/bin:/usr/bin
+add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
 
 if [ -f /usr/local/bin/rbenv ]; then
