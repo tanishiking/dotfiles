@@ -80,21 +80,12 @@ alias ll='ls -la'
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # for homebrew
 add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
 
 if [ -f /usr/local/bin/rbenv ]; then
 	eval "$(rbenv init -)"
-fi
-
-#export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
-if [ -f /usr/local/bin/brew ]; then
-  add_path_if_exists $(brew --prefix homebrew/php/php56)
-  add_path_if_exists $HOME/.composer/vendor/bin
 fi
 
 # JAVA_HOME
