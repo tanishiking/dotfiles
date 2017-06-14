@@ -91,6 +91,17 @@ repo = 'leafgarland/typescript-vim'
 on_ft = 'typescript'
 
 [[plugins]]
+repo = 'Quramy/tsuquyomi'
+on_ft = 'typescript'
+hook_add = '''
+let g:tsuquyomi_definition_split = 3
+'''
+# 0: |:edit|
+# 1: |:split|
+# 2: |:vplit|
+# 3: |:tabedit|
+
+[[plugins]]
 repo = 'lervag/vimtex'
 on_ft = 'tex'
 hook_source = 'source ~/.vim/config/plugins/tex.vim'
