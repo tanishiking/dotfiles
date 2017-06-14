@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -x
+
+PATH="/usr/local/bin/:$PATH"
+export PATH
+
+log_dir="$HOME/Library/Logs/Homebrew/update"
+log_name=${log_dir}/`date "+%Y%m%d"`.log
+outdated_log_name=${log_dir}/outdated
+
+if [ ! -d ${log_dir} ]; then
+  mkdir -p ${log_dir}
+fi
+
+echo "Start brew update ..." >> ${log_name}
+brew update >> ${log_name} 2>&1
+
+echo "" >> ${log_name}
+echo "Start brew doctor" >> ${log_name}
+brew doctor >> ${log_name} 2>&1
+
+brew outdated > ${outdated_log_name}
