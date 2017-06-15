@@ -25,6 +25,9 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
+hook_add = '''
+    vmap <Enter> <Plug>(EasyAlign)
+'''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
