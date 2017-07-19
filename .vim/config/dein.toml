@@ -2,7 +2,7 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'altercation/vim-colors-solarized'
+repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
@@ -31,6 +31,11 @@ hook_add = '''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+hook_add = '''
+    let g:lightline = {
+    \   'colorscheme': 'powerline'
+    \}
+'''
 
 [[plugins]]
 repo = 'haya14busa/incsearch.vim'
@@ -46,3 +51,4 @@ repo = 'thinca/vim-quickrun'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
+build = 'make' # Linux & macOS only

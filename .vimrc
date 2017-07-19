@@ -9,9 +9,6 @@ scriptencoding utf-8
 " ファイルを開く際のエンコーディング
 set fileencoding=utf-8
 
-"256色モード
-set t_Co=256
-
 syntax on
 
 "===Spaces&Tab===
