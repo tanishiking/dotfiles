@@ -48,7 +48,7 @@ set colorcolumn=80
 
 " マッピングはタイムアウトなし
 " キーコードはタイムアウトあり
-set notimeout ttimeout ttimeoutlen=200
+set notimeout ttimeout ttimeoutlen=10
 
 " swapファイルつくらない
 set noswapfile
