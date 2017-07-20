@@ -8,7 +8,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-if = 'has("nvim")'
+if = 'has("nvim") && has("python3")'
 on_cmd = ['Denite', 'DeniteCursorWord']
 hook_add = '''
 nmap <silent> <C-p> :<C-u>Denite -default-action=tabopen file_rec<CR>
