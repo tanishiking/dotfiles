@@ -7,6 +7,27 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/denite.nvim'
+if = 'has("nvim")'
+on_cmd = ['Denite', 'DeniteCursorWord']
+hook_add = '''
+nmap <silent> <C-p> :<C-u>Denite -default-action=tabopen file_rec<CR>
+nmap <silent> <C-g> :<C-u>Denite -default-action=tabopen grep<CR>
+'''
+hook_source = '''
+
+call denite#custom#map('insert', "<C-n>", '<denite:move_to_next_line>')
+call denite#custom#map('insert', "<C-p>", '<denite:move_to_previous_line>')
+call denite#custom#map('normal', "<C-n>", '<denite:move_to_next_line>')
+call denite#custom#map('normal', "<C-p>", '<denite:move_to_previous_line>')
+
+" tabopen や vsplit のキーバインドを割り当て
+call denite#custom#map('insert', "<C-t>", '<denite:do_action:tabopen>')
+call denite#custom#map('insert', "<C-v>", '<denite:do_action:vsplit>')
+call denite#custom#map('insert', "<C-s>", '<denite:do_action:split>')
+'''
+
+[[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = 'markdown'
 hook_add = '''
@@ -62,14 +83,6 @@ on_ft = 'python'
 [[plugins]]
 repo = 'hotchpotch/perldoc-vim'
 on_ft = 'perl'
-
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-if = "has('lua')"
-on_event = 'InsertEnter'
-hook_source = '''
-  let g:neocomplete#enable_at_startup = 1
-'''
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
