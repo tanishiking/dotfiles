@@ -115,26 +115,12 @@ set foldnestmax=10
 "nnoremap <space> za
 "set foldmethod=indent
 
-" C-p でブラウザを開く
-nnoremap <C-p> :!open %<CR>
-
 "===Movement===
 "move vertically by visual line
 nnoremap j gj
 nnoremap k gk
 
-"moveto begin and end of line
-nnoremap B ^
-nnoremap E $
-"nnoremap $ <nop>
-"nnoremap ^ <nop>
-"hilight last inserted line
-nnoremap gV `[v`]
-
 nnoremap <silent> <C-e> :NERDTreeToggle<CR>
-
-"===Leader Shortcuts===
-" jj is espacpe
 
 "===Clipboard===
 set clipboard+=unnamed
