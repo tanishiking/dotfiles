@@ -82,6 +82,16 @@ alias ll='ls -la'
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
 
+if _command_exists gsed; then
+  alias sed='gsed'
+fi
+if _command_exists gtac; then
+  alias tac='gtac'
+fi
+if _command_exists gawk; then
+  alias awk='gawk'
+fi
+
 # for homebrew
 add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
@@ -128,3 +138,5 @@ if [ -f '/Users/tanishiking/google-cloud-sdk/path.zsh.inc' ]; then source '/User
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc'; fi
+
+add_path_if_exists $HOME/android-adk-macosx/platform-tools
