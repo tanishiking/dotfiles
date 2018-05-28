@@ -21,10 +21,10 @@ if dein#load_state(s:dein_path)
   call dein#save_state()
 endif
 
-"let g:molokai_original = 1
-let g:rehash256 = 1
+" let g:rehash256 = 1
+" let g:solarized_termcolors=256
 set background=dark
-colorscheme molokai
+colorscheme solarized
 
 filetype plugin indent on
 
