@@ -113,8 +113,13 @@ if [ -d "${PHP_ROOT}" ]; then
     eval "$(phpenv init - zsh)"
 fi
 
-### nodebrew
-add_path_if_exists $HOME/.nodebrew/current/bin
+### ndenv
+# git clone https://github.com/riywo/ndenv ~/.ndenv
+# git clone https://github.com/riywo/node-build.git $(ndenv root)/plugins/node-build
+add_path_if_exists $HOME/.ndenv/bin
+if [ -f $HOME/.ndenv/bin/ndenv ]; then
+    eval "$(ndenv init -)"
+fi
 
 add_path_if_exists $HOME/.local/bin
 
