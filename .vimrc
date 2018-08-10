@@ -31,8 +31,6 @@ set number
 set showcmd
 " カーソル行をハイライトする
 set cursorline
-" カーソル列をハイライト
-set cursorcolumn
 "保存しなくてもファイルを切り替えられる
 set hidden
 " ファイルを保存をしてないときにファイル保存を確認する
@@ -129,4 +127,3 @@ filetype plugin on
 
 " 外部ファイルを読み込み
 runtime! config/*.vim
-
