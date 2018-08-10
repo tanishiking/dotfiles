@@ -1,6 +1,13 @@
-if _command_exists peco; then
+if which tac >/dev/null; then
+  tac="tac"
+else
+  tac="tail -r"
+fi
+
+
+if which ghq 2>/dev/null; then
   function peco-history-selection() {
-      BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+      BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
       CURSOR=$#BUFFER
       zle reset-prompt
   }
@@ -34,7 +41,7 @@ if _command_exists peco; then
     fi
   }
 
-  if _command_exists ghq; then
+  if which ghq 2>/dev/null; then
     bindkey '^]' peco-src
     function peco-src() {
       local src=$(ghq list --full-path | peco --query "$LBUFFER")
@@ -47,7 +54,7 @@ if _command_exists peco; then
     zle -N peco-src
   fi
 
-  if _command_exists git; then
+  if which git 2>/dev/null; then
     function git-grep-edit() {
       local src=$(git grep -n $1 | peco | awk -F: '{print "+" $2 " " $1}')
       if [ -n "$src" ]; then

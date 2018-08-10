@@ -10,12 +10,8 @@ function add_path_if_exists() {
 
 function load_library() {
     if [ -f $1 ]; then
-        . $1
+        source $1
     fi
-}
-
-function _command_exists() {
-    hash "$1" 2>/dev/null
 }
 
 # 履歴ファイルの保存先
@@ -120,7 +116,7 @@ fi
 
 add_path_if_exists $HOME/.local/bin
 
-export XDG_DATA_HOME=/usr/local/share
+export XDG_CONFIG_HOME=$HOME/.config
 if [ -f /usr/local/bin/plenv ]; then
     eval "$(plenv init -)"
 fi
@@ -134,8 +130,6 @@ add_path_if_exists $GOPATH/bin
 ### diff-highlight ###
 add_path_if_exists /usr/local/share/git-core/contrib/diff-highlight
 
-load_library $ZDOTDIR/peco.zsh
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/tanishiking/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -143,3 +137,5 @@ if [ -f '/Users/tanishiking/google-cloud-sdk/path.zsh.inc' ]; then source '/User
 if [ -f '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc'; fi
 
 add_path_if_exists $HOME/android-adk-macosx/platform-tools
+
+load_library $ZDOTDIR/peco.zsh
