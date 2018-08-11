@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=xmodmap
+Exec=/home/tanishiking/dotfiles/bin/exec_xmodmap
+Comment=

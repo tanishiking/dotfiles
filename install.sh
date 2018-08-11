@@ -3,4 +3,7 @@ ln -sf ~/dotfiles/.vim ~/.vim
 ln -sf ~/dotfiles/.zshenv ~/.zshenv 
 ln -sf ~/dotfiles/.zsh ~/.zsh 
 ln -sf ~/dotfiles/.config/nvim ~/.config
-ln -sf ~/dotfiles/.xinitrc ~/.xinitrc
+ln -sf ~/dotfiles/.Xmodmap ~/.Xmodmap
+ln -sf ~/dotfiles/.Xdefaults ~/.Xdefaults
+ln -sf ~/dotfiles/.config/libinput-gestures.conf ~/.config/libinput-gestures.conf
+ln -sf ~/dotfiles/.config/autostart ~/.config

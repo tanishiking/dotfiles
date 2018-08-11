@@ -1,0 +1,76 @@
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+
+Xft.dpi:                    96
+Xft.antialias:              false
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+urxvt.geometry:             90x30
+urxvt.transparent:          false
+urxvt.fading:               0
+! urxvt.urgentOnBell:         true
+urxvt.visualBell:           true
+urxvt.loginShell:           true
+urxvt.saveLines:            3000
+urxvt.internalBorder:       3
+urxvt.lineSpace:            0
+
+! Fonts
+urxvt.allow_bold:           false
+/* urxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
+!urxvt*font: xft:Monospace:pixelsize=14
+!urxvt*boldFont: xft:Monospace:pixelsize=14
+
+! Scrollbar
+urxvt.scrollStyle:          rxvt
+urxvt.scrollBar:            false
+
+! Perl extensions
+urxvt.perl-ext-common:      default,matcher,selection-to-clipboard
+urxvt.matcher.button:       1
+urxvt.urlLauncher:          firefox
+
+! Cursor
+urxvt.cursorBlink:          true
+urxvt.cursorColor:          #657b83
+urxvt.cursorUnderline:      true
+
+! Pointer
+urxvt.pointerBlank:         true
+
+*fadeColor: #002b36
+*cursorColor: #93a1a1
+*pointerColorBackground: #586e75
+*pointerColorForeground: #93a1a1
+
+!! Color Scheme and Opacity - gruvbox-dark https://github.com/morhetz/gruvbox
+urxvt.depth:                32
+urxvt.color0:               [90]#282828
+urxvt.color1:               [90]#cc241d
+urxvt.color2:               [90]#98971a
+urxvt.color3:               [90]#d79921
+urxvt.color4:               [90]#458588
+urxvt.color5:               [90]#b16286
+urxvt.color6:               [90]#689d6a
+urxvt.color7:               [90]#a89984
+urxvt.color8:               [90]#928374
+urxvt.color9:               [90]#fb4934
+urxvt.color10:              [90]#b8bb26
+urxvt.color11:              [90]#fabd2f
+urxvt.color12:              [90]#83a598
+urxvt.color13:              [90]#d3869b
+urxvt.color14:              [90]#8ec07c
+urxvt.color15:              [90]#ebdbb2
+urxvt.foreground:           #ebdbb2
+urxvt.background:           #282828
+urxvt.colorIT:              [90]#8ec07c
+urxvt.colorBD:              [90]#d5c4a1
+urxvt.colorUL:              [90]#83a598
+urxvt.scrollColor:          [90]#504945
+!urxvt.troughColor:          [90]#3C3836
+
+urxvt.letterSpace: -1
+urxvt.font: xft:Dejavu Sans Mono-12,xft:IPAGothic
