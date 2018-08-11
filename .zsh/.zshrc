@@ -2,6 +2,10 @@
 
 alias vim="nvim"
 
+export LANG=en_US.utf-8
+export LC_ALL=en_US.utf-8
+export LANGUAGE=en_US.utf-8
+
 function add_path_if_exists() {
     if [ -d "$1" ]; then
         export PATH="$1:$PATH"
@@ -78,13 +82,13 @@ alias ll='ls -la'
 #sudoのあとのコマンドでエイリアスを有効
 alias sudo='sudo '
 
-if _command_exists gsed; then
+if which gsed 2>/dev/null; then
   alias sed='gsed'
 fi
-if _command_exists gtac; then
+if which gtac 2>/dev/null; then
   alias tac='gtac'
 fi
-if _command_exists gawk; then
+if which gawk 2>/dev/null; then
   alias awk='gawk'
 fi
 

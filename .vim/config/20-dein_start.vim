@@ -22,9 +22,8 @@ if dein#load_state(s:dein_path)
 endif
 
 " let g:rehash256 = 1
-" let g:solarized_termcolors=256
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 filetype plugin indent on
 

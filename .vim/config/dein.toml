@@ -2,7 +2,7 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'altercation/vim-colors-solarized'
+repo = 'morhetz/gruvbox'
 
 [[plugins]]
 repo = 'Townk/vim-autoclose'
