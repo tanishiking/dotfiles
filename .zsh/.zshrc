@@ -2,6 +2,10 @@
 
 alias vim="nvim"
 
+autoload -U compinit
+fpath=($HOME/.bloop/zsh $fpath)
+compinit
+
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
 export LANGUAGE=en_US.utf-8
@@ -96,7 +100,9 @@ fi
 add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
 
-if [ -f /usr/local/bin/rbenv ]; then
+# Linux
+add_path_if_exists $HOME/.rbenv/bin
+if which rbenv > /dev/null; then
 	eval "$(rbenv init -)"
 fi
 
@@ -113,9 +119,18 @@ if [ -d "${PHP_ROOT}" ]; then
     eval "$(phpenv init - zsh)"
 fi
 
-### nodenv
-if [ -f /usr/local/bin/nodenv ]; then
-    eval "$(nodenv init -)"
+# pythonz
+# $ curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
+[[ -s $HOME/.pythonz/etc/bashrc ]] && bash $HOME/.pythonz/etc/bashrc
+add_path_if_exists $HOME/.pythonz/bin
+
+# nodenv
+## Linux
+## git clone https://github.com/nodenv/nodenv.git ~/.nodenv
+add_path_if_exists $HOME/.nodenv/bin
+## OSX
+if which nodenv > /dev/null; then
+  eval "$(nodenv init -)"
 fi
 
 add_path_if_exists $HOME/.local/bin
@@ -140,6 +155,16 @@ if [ -f '/Users/tanishiking/google-cloud-sdk/path.zsh.inc' ]; then source '/User
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc'; fi
 
+# scalameta
+if which coursier 2>/dev/null; then
+  alias metac="coursier launch org.scalameta:metac_2.12.6:4.0.0 -- -cp $(coursier fetch -p org.scala-lang:scala-library:2.12.6)"
+  alias metacp='coursier launch org.scalameta:metacp_2.12:4.0.0 -- --dependency-classpath $(echo $JAVA_HOME/jre/lib/rt.jar):$(coursier fetch org.scala-lang:scala-library:2.12.6 -p)'
+  alias metap="coursier launch org.scalameta:metap_2.11:4.0.0 --"
+fi
+
 add_path_if_exists $HOME/android-adk-macosx/platform-tools
+
+## graalvm
+# add_path_if_exists /opt/graalvm-ce-1.0.0-rc5/bin
 
 load_library $ZDOTDIR/peco.zsh
