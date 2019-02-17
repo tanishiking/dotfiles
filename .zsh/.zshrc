@@ -149,6 +149,10 @@ add_path_if_exists $GOPATH/bin
 ### diff-highlight ###
 add_path_if_exists /usr/local/share/git-core/contrib/diff-highlight
 
+if which aws_zsh_completer.sh 2>/dev/null; then
+  source aws_zsh_completer.sh
+fi
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/tanishiking/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/path.zsh.inc'; fi
 
