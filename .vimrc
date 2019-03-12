@@ -11,6 +11,8 @@ set fileencoding=utf-8
 
 syntax on
 
+let maplocalleader = '.'
+
 "===Spaces&Tab===
 " 改行時の自動インデントとスマートインデントをおこなう
 set autoindent smartindent
@@ -122,6 +124,7 @@ nnoremap <silent> <C-e> :NERDTreeToggle<CR>
 
 "===Clipboard===
 set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 filetype plugin on
 
