@@ -100,6 +100,18 @@ fi
 add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
 
+# linuxbrew
+add_path_if_exists "/home/linuxbrew/.linuxbrew/bin"
+if [ -d "/home/linuxbrew/.linuxbrew/share/man" ]; then
+  export MANPATH="/home/linuxbrew/.linuxnrew/share/man:$MANPATH"
+fi
+if [ -d "/home/linuxbrew/.linuxbrew/share/info" ]; then
+  export INFOPATH="/home/linuxbrew/.linuxnrew/share/info:$INFOPATH"
+fi
+if [ -d "/home/linuxbrew/.linuxbrew/lib" ]; then
+  export LD_LIBRARY_PATH="/home/linuxbrew/.linuxbrew/lib:$LD_LIBRARY_PATH"
+fi
+
 # Linux
 add_path_if_exists $HOME/.rbenv/bin
 if which rbenv > /dev/null; then
