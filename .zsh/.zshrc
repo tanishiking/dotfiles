@@ -10,6 +10,8 @@ export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
 export LANGUAGE=en_US.utf-8
 
+# export AWS_DEFAULT_PROFILE='hatena'
+
 function add_path_if_exists() {
     if [ -d "$1" ]; then
         export PATH="$1:$PATH"
@@ -68,23 +70,20 @@ linux*)
     ;;
 esac
 
+# starship
+# https://starship.rs/
+if which starship > /dev/null; then
+  eval "$(starship init zsh)"
+fi
 
-#プロンプト
-PROMPT="
-[%n] %{${fg[yellow]}%}%~%{${reset_color}%}
-%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(っ´∀｀)っ!(;・∀・%)<)%{${reset_color}%} "
 
 #キーバインドemacs
 bindkey -e
 
 #エイリアス
 alias rm='rm -i'
-alias mkdir='mkdir -p'
 
 alias ll='ls -la'
-
-#sudoのあとのコマンドでエイリアスを有効
-alias sudo='sudo '
 
 if which gsed 2>/dev/null; then
   alias sed='gsed'
@@ -100,18 +99,6 @@ fi
 add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
 
-# linuxbrew
-add_path_if_exists "/home/linuxbrew/.linuxbrew/bin"
-if [ -d "/home/linuxbrew/.linuxbrew/share/man" ]; then
-  export MANPATH="/home/linuxbrew/.linuxnrew/share/man:$MANPATH"
-fi
-if [ -d "/home/linuxbrew/.linuxbrew/share/info" ]; then
-  export INFOPATH="/home/linuxbrew/.linuxnrew/share/info:$INFOPATH"
-fi
-if [ -d "/home/linuxbrew/.linuxbrew/lib" ]; then
-  export LD_LIBRARY_PATH="/home/linuxbrew/.linuxbrew/lib:$LD_LIBRARY_PATH"
-fi
-
 # Linux
 add_path_if_exists $HOME/.rbenv/bin
 if which rbenv > /dev/null; then
@@ -122,19 +109,8 @@ fi
 if which jenv > /dev/null; then
   export JENV_ROOT=/usr/local/var/jenv
   eval "$(jenv init -)"
+  export JAVA_HOME="$JENV_ROOT/versions/`jenv version-name`"
 fi
-
-
-export PHP_ROOT="${HOME}/.phpenv"
-if [ -d "${PHP_ROOT}" ]; then
-    export PATH=${PHP_ROOT}/bin:$PATH
-    eval "$(phpenv init - zsh)"
-fi
-
-# pythonz
-# $ curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
-[[ -s $HOME/.pythonz/etc/bashrc ]] && bash $HOME/.pythonz/etc/bashrc
-add_path_if_exists $HOME/.pythonz/bin
 
 # nodenv
 ## Linux
@@ -157,6 +133,12 @@ if [ -d "$HOME/dev" ]; then
     export GOPATH="$HOME/dev"
 fi
 add_path_if_exists $GOPATH/bin
+export GO111MODULE=on
+
+### kubernetes ###
+if which kubectl 2>/dev/null; then
+  eval "$(kubectl completion zsh)"
+fi
 
 ### diff-highlight ###
 add_path_if_exists /usr/local/share/git-core/contrib/diff-highlight
@@ -165,6 +147,10 @@ if which aws_zsh_completer.sh 2>/dev/null; then
   source aws_zsh_completer.sh
 fi
 
+### awscli
+add_path_if_exists ~/Library/Python/3.7/bin
+
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/tanishiking/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -172,15 +158,9 @@ if [ -f '/Users/tanishiking/google-cloud-sdk/path.zsh.inc' ]; then source '/User
 if [ -f '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc'; fi
 
 # scalameta
-if which coursier 2>/dev/null; then
-  alias metac="coursier launch org.scalameta:metac_2.12.6:4.0.0 -- -cp $(coursier fetch -p org.scala-lang:scala-library:2.12.6)"
-  alias metacp='coursier launch org.scalameta:metacp_2.12:4.0.0 -- --dependency-classpath $(echo $JAVA_HOME/jre/lib/rt.jar):$(coursier fetch org.scala-lang:scala-library:2.12.6 -p)'
-  alias metap="coursier launch org.scalameta:metap_2.11:4.0.0 --"
-fi
-
-add_path_if_exists $HOME/android-adk-macosx/platform-tools
-
-## graalvm
-# add_path_if_exists /opt/graalvm-ce-1.0.0-rc5/bin
+# if which coursier 2>/dev/null; then
+#   alias metac="coursier launch org.scalameta:metac_2.12.8:4.1.9 -- -cp $(coursier fetch -p org.scala-lang:scala-library:2.12.8)"
+#   alias metap="coursier launch  -M scala.meta.cli.Metap org.scalameta:scalameta_2.11:4.1.9 --"
+# fi
 
 load_library $ZDOTDIR/peco.zsh
