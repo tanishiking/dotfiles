@@ -112,6 +112,9 @@ if which jenv > /dev/null; then
   export JAVA_HOME="$JENV_ROOT/versions/`jenv version-name`"
 fi
 
+## jabba
+[ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
+
 # nodenv
 ## Linux
 ## git clone https://github.com/nodenv/nodenv.git ~/.nodenv
@@ -129,8 +132,8 @@ if [ -f /usr/local/bin/plenv ]; then
 fi
 
 ### golang ###
-if [ -d "$HOME/dev" ]; then
-    export GOPATH="$HOME/dev"
+if [ -d "$HOME/src" ]; then
+    export GOPATH="$HOME/src"
 fi
 add_path_if_exists $GOPATH/bin
 export GO111MODULE=on
@@ -152,10 +155,12 @@ add_path_if_exists ~/Library/Python/3.7/bin
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/tanishiking/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/tanishiking/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+
 
 # scalameta
 # if which coursier 2>/dev/null; then

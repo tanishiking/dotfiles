@@ -23,7 +23,7 @@ endif
 
 " let g:rehash256 = 1
 set background=dark
-colorscheme gruvbox
+" colorscheme gruvbox
 
 filetype plugin indent on
 
