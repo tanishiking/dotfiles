@@ -43,8 +43,6 @@ set visualbell
 set t_vb=
 " すべてのモードでマウス有効
 set mouse=a
-" 80列目に印をつける
-set colorcolumn=80
 
 " マッピングはタイムアウトなし
 " キーコードはタイムアウトあり

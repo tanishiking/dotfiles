@@ -113,6 +113,9 @@ if which jenv > /dev/null; then
 fi
 
 ## jabba
+if [ -d "$HOME/.jabba" ]; then
+    export JABBA_HOME="$HOME/.jabba"
+fi
 [ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
 
 # nodenv
