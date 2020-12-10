@@ -134,6 +134,10 @@ if [ -f /usr/local/bin/plenv ]; then
     eval "$(plenv init -)"
 fi
 
+if which opam > /dev/null; then
+  eval `opam config env`
+fi
+
 ### golang ###
 if [ -d "$HOME/src" ]; then
     export GOPATH="$HOME/src"
@@ -157,18 +161,14 @@ fi
 add_path_if_exists ~/Library/Python/3.7/bin
 
 
+### couriser
+export PATH="$PATH:/Users/tanishiking/Library/Application Support/Coursier/bin"
+
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
-
-
-
-# scalameta
-# if which coursier 2>/dev/null; then
-#   alias metac="coursier launch org.scalameta:metac_2.12.8:4.1.9 -- -cp $(coursier fetch -p org.scala-lang:scala-library:2.12.8)"
-#   alias metap="coursier launch  -M scala.meta.cli.Metap org.scalameta:scalameta_2.11:4.1.9 --"
-# fi
 
 load_library $ZDOTDIR/peco.zsh
