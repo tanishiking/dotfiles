@@ -118,6 +118,18 @@ if [ -d "$HOME/.jabba" ]; then
 fi
 [ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
 
+# pyenv
+## git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+## git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+if [ -d "$HOME/.pyenv" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+fi
+add_path_if_exists $PYENV_ROOT/bin
+if which pyenv 2>/dev/null; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+
 # nodenv
 ## Linux
 ## git clone https://github.com/nodenv/nodenv.git ~/.nodenv
@@ -136,6 +148,11 @@ fi
 
 if which opam > /dev/null; then
   eval `opam config env`
+fi
+
+
+if [ -d "$HOME/.cargo" ]; then
+   source $HOME/.cargo/env
 fi
 
 ### golang ###
