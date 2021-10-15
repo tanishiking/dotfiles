@@ -113,10 +113,10 @@ if which jenv > /dev/null; then
 fi
 
 ## jabba
-if [ -d "$HOME/.jabba" ]; then
-    export JABBA_HOME="$HOME/.jabba"
-fi
-[ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
+# if [ -d "$HOME/.jabba" ]; then
+#     export JABBA_HOME="$HOME/.jabba"
+# fi
+# [ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
 
 # pyenv
 ## git clone https://github.com/pyenv/pyenv.git ~/.pyenv
@@ -180,6 +180,8 @@ add_path_if_exists ~/Library/Python/3.7/bin
 
 ### couriser
 export PATH="$PATH:/Users/tanishiking/Library/Application Support/Coursier/bin"
+
+add_path_if_exists $HOME/src/github.com/graalvm/mx
 
 
 # The next line updates PATH for the Google Cloud SDK.
