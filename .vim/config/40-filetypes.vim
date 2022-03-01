@@ -6,4 +6,6 @@ augroup filetypes
   autocmd BufRead,BufNewFile *.ts set filetype=typescript
   autocmd BufRead,BufNewFile *.dig set filetype=yaml
   autocmd BufRead,BufNewFile *yml.liquid set filetype=yaml
+  autocmd BufRead,BufNewFile *.u set filetype=unison
+  autocmd BufRead,BufNewFile *.uu set filetype=unison
 augroup END

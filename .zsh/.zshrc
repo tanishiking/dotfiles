@@ -128,6 +128,9 @@ add_path_if_exists $PYENV_ROOT/bin
 if which pyenv 2>/dev/null; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
+  # for https://github.com/pyenv/pyenv/issues/1737
+  export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+  export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 fi
 
 # nodenv
@@ -162,6 +165,11 @@ fi
 add_path_if_exists $GOPATH/bin
 export GO111MODULE=on
 
+### scala-cli ###
+if which scala-cli > /dev/null; then
+  eval "$(scala-cli install completions --env --shell zsh)"
+fi
+
 ### kubernetes ###
 if which kubectl 2>/dev/null; then
   eval "$(kubectl completion zsh)"
@@ -191,3 +199,8 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 load_library $ZDOTDIR/peco.zsh
+
+# >>> scala-cli completions >>>
+fpath=("/Users/tanishiking/Library/Application Support/ScalaCli/completions/zsh" $fpath)
+compinit
+# <<< scala-cli completions <<<

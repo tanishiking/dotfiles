@@ -151,6 +151,11 @@ let g:go_fmt_autosave = 0
 '''
 
 [[plugins]]
+repo = 'unisonweb/unison'
+on_ft = 'unison'
+rtp = 'editor-support/vim'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = 'NerdTreeToggle'
 hook_add = '''

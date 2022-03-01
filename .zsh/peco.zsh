@@ -4,6 +4,15 @@ else
   tac="tail -r"
 fi
 
+decode_base64() {
+  if base64 -d >/dev/null 2>&1; then
+    # gnu
+    cat - | base64 -d
+  else
+    # bsd
+    cat - | base64 -D
+  fi
+}
 
 if which ghq 2>/dev/null; then
   function peco-history-selection() {
