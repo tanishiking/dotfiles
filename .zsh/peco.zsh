@@ -14,23 +14,25 @@ decode_base64() {
   fi
 }
 
+export FZF_DEFAULT_OPTS='--height 50% --reverse --border --inline-info'
+
 if which ghq 2>/dev/null; then
-  function peco-history-selection() {
-      BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | peco`
+  function fzf-history-selection() {
+      BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | fzf`
       CURSOR=$#BUFFER
       zle reset-prompt
   }
-  function _peco-ssh-select-host() {
+  function _fzf-ssh-select-host() {
     local host
-    host=$(grep -iE '^host' ~/.ssh/config | awk '{print $2}' | peco)
+    host=$(grep -iE '^host' ~/.ssh/config | awk '{print $2}' | fzf)
     if [ "$host" != '' ]; then
       ssh $@ $host
     fi
   }
-  alias ssh-peco=_peco-ssh-select-host
+  alias ssh-fzf=_fzf-ssh-select-host
 
-  zle -N peco-history-selection
-  bindkey '^R' peco-history-selection
+  zle -N fzf-history-selection
+  bindkey '^R' fzf-history-selection
 
   function connpass() {
     local CONNPASS_API_URL='https://connpass.com/api/v1/event/'
@@ -44,28 +46,28 @@ if which ghq 2>/dev/null; then
       fi
       shift
     done
-    local event_id=$(curl "$CONNPASS_API_URL?keyword=$keyword" 2> /dev/null | jq -r '.events[] | "\(.event_id) \(.started_at) \(.title)"' | peco | awk '{print $1}')
+    local event_id=$(curl "$CONNPASS_API_URL?keyword=$keyword" 2> /dev/null | jq -r '.events[] | "\(.event_id) \(.started_at) \(.title)"' | fzf | awk '{print $1}')
     if [ "$event_id" != '' ]; then
       open "$CONNPASS_EVENT_URL/$event_id"
     fi
   }
 
   if which ghq 2>/dev/null; then
-    bindkey '^]' peco-src
-    function peco-src() {
-      local src=$(ghq list --full-path | peco --query "$LBUFFER")
+    bindkey '^]' fzf-src
+    function fzf-src() {
+      local src=$(ghq list --full-path | fzf --query "$LBUFFER")
       if [ -n "$src" ]; then
         BUFFER="cd $src"
         zle accept-line
       fi
       zle -R -c
     }
-    zle -N peco-src
+    zle -N fzf-src
   fi
 
   if which git 2>/dev/null; then
     function git-grep-edit() {
-      local src=$(git grep -n $1 | peco | awk -F: '{print "+" $2 " " $1}')
+      local src=$(git grep -n $1 | fzf | awk -F: '{print "+" $2 " " $1}')
       if [ -n "$src" ]; then
         eval "$EDITOR $src"
       fi
