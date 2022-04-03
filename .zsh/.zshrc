@@ -198,7 +198,7 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
-load_library $ZDOTDIR/peco.zsh
+load_library $ZDOTDIR/fxf.zsh
 
 # >>> scala-cli completions >>>
 fpath=("/Users/tanishiking/Library/Application Support/ScalaCli/completions/zsh" $fpath)
