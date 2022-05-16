@@ -191,6 +191,9 @@ export PATH="$PATH:/Users/tanishiking/Library/Application Support/Coursier/bin"
 
 add_path_if_exists $HOME/src/github.com/graalvm/mx
 
+## mysql
+add_path_if_exists /usr/local/opt/mysql-client/bin
+
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
