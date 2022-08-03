@@ -80,14 +80,11 @@ fi
 #キーバインドemacs
 bindkey -e
 
-#エイリアス
 alias rm='rm -i'
 
 alias ll='ls -la'
 
-if which gsed 2>/dev/null; then
-  alias sed='gsed'
-fi
+add_path_if_exists /usr/local/opt/gnu-sed/libexec/gnubin
 if which gtac 2>/dev/null; then
   alias tac='gtac'
 fi

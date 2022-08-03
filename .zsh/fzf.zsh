@@ -1,9 +1,3 @@
-if which tac >/dev/null; then
-  tac="tac"
-else
-  tac="tail -r"
-fi
-
 decode_base64() {
   if base64 -d >/dev/null 2>&1; then
     # gnu
@@ -14,11 +8,11 @@ decode_base64() {
   fi
 }
 
-export FZF_DEFAULT_OPTS='--height 50% --reverse --border --inline-info'
+export FZF_DEFAULT_OPTS='--height 50% --reverse --border --inline-info --no-sort --tac'
 
 if which ghq 2>/dev/null; then
   function fzf-history-selection() {
-      BUFFER=`history -n 1 | tac  | awk '!a[$0]++' | fzf`
+      BUFFER=`history -n 1 | awk '!a[$0]++' | fzf`
       CURSOR=$#BUFFER
       zle reset-prompt
   }
