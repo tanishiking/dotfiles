@@ -8,7 +8,7 @@ decode_base64() {
   fi
 }
 
-export FZF_DEFAULT_OPTS='--height 50% --reverse --border --inline-info --no-sort --tac'
+export FZF_DEFAULT_OPTS='--height 50% --reverse --border --inline-info --tac'
 
 if which ghq 2>/dev/null; then
   function fzf-history-selection() {

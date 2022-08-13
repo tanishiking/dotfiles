@@ -122,6 +122,7 @@ if [ -d "$HOME/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
 fi
 add_path_if_exists $PYENV_ROOT/bin
+add_path_if_exists $HOME/.poetry/bin
 if which pyenv 2>/dev/null; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
