@@ -10,7 +10,8 @@ decode_base64() {
 
 export FZF_DEFAULT_OPTS='--height 50% --reverse --border --inline-info --tac'
 
-if which ghq 2>/dev/null; then
+
+if which fzf 2>/dev/null; then
   function fzf-history-selection() {
       BUFFER=`history -n 1 | awk '!a[$0]++' | fzf`
       CURSOR=$#BUFFER
@@ -65,6 +66,13 @@ if which ghq 2>/dev/null; then
       if [ -n "$src" ]; then
         eval "$EDITOR $src"
       fi
+    }
+  fi
+
+  if which gh 2>/dev/null; then
+    # https://twitter.com/elijahmanor/status/1559525388417503233
+    function ghpr() {
+      GH_FORCE_TTY=100% gh pr list | fzf --ansi --preview 'GH_FORCE_TTY=100% gh pr view {1}' --preview-window down --header-lines 3 | awk '{print $1}' | xargs gh pr checkout
     }
   fi
 fi
