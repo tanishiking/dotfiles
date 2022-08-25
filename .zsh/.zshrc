@@ -103,11 +103,11 @@ if which rbenv > /dev/null; then
 fi
 
 ## jenv
-if which jenv > /dev/null; then
-  export JENV_ROOT=/usr/local/var/jenv
-  eval "$(jenv init -)"
-  export JAVA_HOME="$JENV_ROOT/versions/`jenv version-name`"
-fi
+# if which jenv > /dev/null; then
+#   export JENV_ROOT=/usr/local/var/jenv
+#   eval "$(jenv init -)"
+#   export JAVA_HOME="$JENV_ROOT/versions/`jenv version-name`"
+# fi
 
 ## jabba
 # if [ -d "$HOME/.jabba" ]; then
@@ -118,6 +118,7 @@ fi
 # pyenv
 ## git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ## git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+export JAVA_HOME=`/usr/libexec/java_home -v 17`
 if [ -d "$HOME/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
 fi
