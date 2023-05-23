@@ -1,5 +1,3 @@
-# .zshrc
-
 alias vim="nvim"
 
 autoload -U compinit
@@ -84,6 +82,8 @@ alias rm='rm -i'
 
 alias ll='ls -la'
 
+
+add_path_if_exists /opt/homebrew/bin
 add_path_if_exists /usr/local/opt/gnu-sed/libexec/gnubin
 if which gtac 2>/dev/null; then
   alias tac='gtac'
@@ -118,7 +118,6 @@ fi
 # pyenv
 ## git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 ## git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
 if [ -d "$HOME/.pyenv" ]; then
   export PYENV_ROOT="$HOME/.pyenv"
 fi
@@ -140,6 +139,11 @@ add_path_if_exists $HOME/.nodenv/bin
 if which nodenv > /dev/null; then
   eval "$(nodenv init -)"
 fi
+
+# nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 add_path_if_exists $HOME/.local/bin
 
@@ -177,14 +181,6 @@ fi
 ### diff-highlight ###
 add_path_if_exists /usr/local/share/git-core/contrib/diff-highlight
 
-if which aws_zsh_completer.sh 2>/dev/null; then
-  source aws_zsh_completer.sh
-fi
-
-### awscli
-add_path_if_exists ~/Library/Python/3.7/bin
-
-
 ### couriser
 export PATH="$PATH:/Users/tanishiking/Library/Application Support/Coursier/bin"
 
@@ -194,7 +190,15 @@ add_path_if_exists $HOME/src/github.com/graalvm/mx
 add_path_if_exists /usr/local/opt/mysql-client/bin
 
 ## LLVM
-add_path_if_exists /usr/local/opt/llvm/bin
+add_path_if_exists /opt/homebrew/opt/llvm@14/bin
+
+# vcpkg
+# git clone git clone https://github.com/Microsoft/vcpkg.git at HOME
+# and ./vcpkg/bootstrap-vcpkg.sh
+add_path_if_exists $HOME/vcpkg
+
+# misc
+add_path_if_exists $HOME/bin
 
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -203,18 +207,11 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
+# GPG
+export GPG_TTY=$(tty)
+if which gpgconf 2>/dev/null; then
+  gpgconf --launch gpg-agent
+fi
+
 load_library $ZDOTDIR/fzf.zsh
 
-# >>> scala-cli completions >>>
-fpath=("/Users/tanishiking/Library/Application Support/ScalaCli/completions/zsh" $fpath)
-compinit
-# <<< scala-cli completions <<<
-
-# bazel
-# alias bazel="bazelisk"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-source "$HOME/.sdkman/bin/sdkman-init.sh"
