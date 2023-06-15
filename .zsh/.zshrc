@@ -85,6 +85,7 @@ alias ll='ls -la'
 
 add_path_if_exists /opt/homebrew/bin
 add_path_if_exists /usr/local/opt/gnu-sed/libexec/gnubin
+add_path_if_exists /opt/homebrew/opt/binutils/bin
 if which gtac 2>/dev/null; then
   alias tac='gtac'
 fi
