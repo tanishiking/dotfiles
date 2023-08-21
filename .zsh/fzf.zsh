@@ -75,4 +75,10 @@ if which fzf 2>/dev/null; then
       GH_FORCE_TTY=100% gh pr list | fzf --ansi --preview 'GH_FORCE_TTY=100% gh pr view {1}' --preview-window down --header-lines 3 | awk '{print $1}' | xargs gh pr checkout
     }
   fi
+
+  local TODOIST_FZF=$(brew --prefix)/share/zsh/site-functions/_todoist_fzf
+  if [ ! -f $TODOIST_FZF ]; then
+    source $TODOIST_FZF
+  fi
+  alias todo="todoist --color list"
 fi
