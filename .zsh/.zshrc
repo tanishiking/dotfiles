@@ -1,4 +1,6 @@
 alias vim="nvim"
+# https://github.com/todotxt/todo.txt-cli
+alias t="todo.sh"
 
 autoload -U compinit
 fpath=($HOME/.bloop/zsh $fpath)
