@@ -7,3 +7,4 @@
 !.vim/dein/repos/github.com/Shougo/dein.vim
 
 .zsh/.zcompdump
+.zsh/.zsh_sessions/

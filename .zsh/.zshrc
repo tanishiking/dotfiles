@@ -218,5 +218,15 @@ if which gpgconf 2>/dev/null; then
   gpgconf --launch gpg-agent
 fi
 
+# wasmtime
+export WASMTIME_HOME="$HOME/.wasmtime"
+add_path_if_exists $WASMTIME_HOME/bin
+
+# deno
+if which deno 2>/dev/null; then
+  # deno completions zsh > $ZDOTDIR/_deno.zsh
+  load_library $ZDOTDIR/_deno.zsh
+fi
+
 load_library $ZDOTDIR/fzf.zsh
 
