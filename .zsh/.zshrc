@@ -1,6 +1,5 @@
 alias vim="nvim"
-# https://github.com/todotxt/todo.txt-cli
-alias t="todo.sh"
+alias bazel="bazelisk"
 
 autoload -U compinit
 fpath=($HOME/.bloop/zsh $fpath)
@@ -136,16 +135,9 @@ if which pyenv 2>/dev/null; then
   export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 fi
 
-# nodenv
-## Linux
-## git clone https://github.com/nodenv/nodenv.git ~/.nodenv
-add_path_if_exists $HOME/.nodenv/bin
-## OSX
-if which nodenv > /dev/null; then
-  eval "$(nodenv init -)"
-fi
 
 # nvm
+# upgrade: https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -158,7 +150,7 @@ if [ -f /usr/local/bin/plenv ]; then
 fi
 
 if which opam > /dev/null; then
-  eval `opam config env`
+  eval $(opam env)
 fi
 
 
