@@ -154,9 +154,11 @@ if which opam > /dev/null; then
 fi
 
 
+## cargo
 if [ -d "$HOME/.cargo" ]; then
    source $HOME/.cargo/env
 fi
+add_path_if_exists $HOME/.cargo/bij
 
 ### golang ###
 if [ -d "$HOME/src" ]; then
