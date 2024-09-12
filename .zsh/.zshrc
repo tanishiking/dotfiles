@@ -113,29 +113,6 @@ if which jenv > /dev/null; then
   export JAVA_HOME="$JENV_ROOT/versions/`jenv version-name`"
 fi
 
-## jabba
-# if [ -d "$HOME/.jabba" ]; then
-#     export JABBA_HOME="$HOME/.jabba"
-# fi
-# [ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
-
-# pyenv
-## git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-## git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
-if [ -d "$HOME/.pyenv" ]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-fi
-add_path_if_exists $PYENV_ROOT/bin
-add_path_if_exists $HOME/.poetry/bin
-if which pyenv 2>/dev/null; then
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-  # for https://github.com/pyenv/pyenv/issues/1737
-  export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-  export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
-fi
-
-
 # nvm
 # upgrade: https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script
 export NVM_DIR="$HOME/.config/nvm"
@@ -143,11 +120,6 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 add_path_if_exists $HOME/.local/bin
-
-export XDG_CONFIG_HOME=$HOME/.config
-if [ -f /usr/local/bin/plenv ]; then
-    eval "$(plenv init -)"
-fi
 
 if which opam > /dev/null; then
   eval $(opam env)
@@ -173,9 +145,9 @@ if which scala-cli > /dev/null; then
 fi
 
 ### kubernetes ###
-if which kubectl 2>/dev/null; then
-  eval "$(kubectl completion zsh)"
-fi
+# if which kubectl 2>/dev/null; then
+#   eval "$(kubectl completion zsh)"
+# fi
 
 ### diff-highlight ###
 add_path_if_exists /usr/local/share/git-core/contrib/diff-highlight
@@ -186,10 +158,10 @@ export PATH="$PATH:/Users/tanishiking/Library/Application Support/Coursier/bin"
 add_path_if_exists $HOME/src/github.com/graalvm/mx
 
 ## mysql
-add_path_if_exists /usr/local/opt/mysql-client/bin
+# add_path_if_exists /usr/local/opt/mysql-client/bin
 
 ## LLVM
-add_path_if_exists /opt/homebrew/opt/llvm@14/bin
+# add_path_if_exists /opt/homebrew/opt/llvm@14/bin
 
 # vcpkg
 # git clone git clone https://github.com/Microsoft/vcpkg.git at HOME
@@ -201,11 +173,11 @@ add_path_if_exists $HOME/bin
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
-
+# if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+# 
+# # The next line enables shell command completion for gcloud.
+# if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+ 
 # GPG
 export GPG_TTY=$(tty)
 if which gpgconf 2>/dev/null; then
@@ -220,6 +192,10 @@ add_path_if_exists $WASMTIME_HOME/bin
 if which deno 2>/dev/null; then
   # deno completions zsh > $ZDOTDIR/_deno.zsh
   load_library $ZDOTDIR/_deno.zsh
+fi
+
+if which atuin 2>/dev/null; then
+  eval "$(atuin init zsh --disable-up-arrow)"
 fi
 
 load_library $ZDOTDIR/fzf.zsh
