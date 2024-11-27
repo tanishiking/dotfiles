@@ -145,9 +145,9 @@ if which scala-cli > /dev/null; then
 fi
 
 ### kubernetes ###
-# if which kubectl 2>/dev/null; then
-#   eval "$(kubectl completion zsh)"
-# fi
+if which kubectl 2>/dev/null; then
+  eval "$(kubectl completion zsh)"
+fi
 
 ### diff-highlight ###
 add_path_if_exists /usr/local/share/git-core/contrib/diff-highlight
@@ -161,7 +161,7 @@ add_path_if_exists $HOME/src/github.com/graalvm/mx
 # add_path_if_exists /usr/local/opt/mysql-client/bin
 
 ## LLVM
-# add_path_if_exists /opt/homebrew/opt/llvm@14/bin
+add_path_if_exists /opt/homebrew/opt/llvm@17/bin
 
 # vcpkg
 # git clone git clone https://github.com/Microsoft/vcpkg.git at HOME
@@ -187,6 +187,9 @@ fi
 # wasmtime
 export WASMTIME_HOME="$HOME/.wasmtime"
 add_path_if_exists $WASMTIME_HOME/bin
+
+# moonbit
+add_path_if_exists "$HOME/.moon/bin"
 
 # deno
 if which deno 2>/dev/null; then
