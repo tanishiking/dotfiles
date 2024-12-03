@@ -1,3 +1,4 @@
+typeset -U PATH path
 alias vim="nvim"
 alias bazel="bazelisk"
 
@@ -82,7 +83,6 @@ bindkey -e
 alias rm='rm -i'
 
 alias ll='ls -la'
-
 
 add_path_if_exists /opt/homebrew/bin
 add_path_if_exists /usr/local/opt/gnu-sed/libexec/gnubin
@@ -200,6 +200,9 @@ fi
 if which atuin 2>/dev/null; then
   eval "$(atuin init zsh --disable-up-arrow)"
 fi
+
+add_path_if_exists "$HOME/.nix-profile/bin"
+
 
 load_library $ZDOTDIR/fzf.zsh
 
