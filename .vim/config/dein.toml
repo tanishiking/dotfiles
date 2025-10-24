@@ -2,7 +2,8 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'morhetz/gruvbox'
+repo = 'ayu-theme/ayu-vim'
+
 
 [[plugins]]
 repo = 'Townk/vim-autoclose'
