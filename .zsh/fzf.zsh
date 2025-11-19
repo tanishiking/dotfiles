@@ -11,7 +11,7 @@ decode_base64() {
 export FZF_DEFAULT_OPTS='--height 50% --reverse --border --inline-info --tac'
 
 
-if which fzf 2>/dev/null; then
+if which fzf >/dev/null; then
   function fzf-history-selection() {
       BUFFER=`history -n 1 | awk '!a[$0]++' | fzf`
       CURSOR=$#BUFFER
@@ -29,7 +29,7 @@ if which fzf 2>/dev/null; then
   # zle -N fzf-history-selection
   # bindkey '^R' fzf-history-selection
 
-  if which ghq 2>/dev/null; then
+  if which ghq >/dev/null; then
     bindkey '^]' fzf-src
     function fzf-src() {
       local src=$(ghq list --full-path | fzf --query "$LBUFFER")

@@ -21,6 +21,13 @@ if dein#load_state(s:dein_path)
   call dein#save_state()
 endif
 
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+if has('vim_starting') && dein#check_install()
+  call dein#install()
+endif
+
 " let g:rehash256 = 1
 set background=dark
 set termguicolors     " enable true colors support
@@ -28,10 +35,3 @@ set termguicolors     " enable true colors support
 let ayucolor="mirage" " for mirage version of theme
 " let ayucolor="dark"   " for dark version of theme
 colorscheme ayu
-
-filetype plugin indent on
-
-" If you want to install not installed plugins on startup.
-if has('vim_starting') && dein#check_install()
-  call dein#install()
-endif
