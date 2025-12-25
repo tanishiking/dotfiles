@@ -1,6 +1,5 @@
 typeset -U PATH path
 alias vim="nvim"
-alias bazel="bazelisk"
 
 export LANG=en_US.utf-8
 export LC_ALL=en_US.utf-8
@@ -78,7 +77,6 @@ fi
 # for homebrew
 add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
-
 add_path_if_exists $HOME/.local/bin
 
 if which opam > /dev/null; then
@@ -91,13 +89,6 @@ if [ -d "$HOME/.cargo" ]; then
 fi
 add_path_if_exists $HOME/.cargo/bij
 
-### golang ###
-if [ -d "$HOME/src" ]; then
-    export GOPATH="$HOME/src"
-fi
-add_path_if_exists $GOPATH/bin
-export GO111MODULE=on
-
 ### scala-cli ###
 if which scala-cli > /dev/null; then
   eval "$(scala-cli install completions --env --shell zsh)"
@@ -109,7 +100,7 @@ if which kubectl >/dev/null; then
 fi
 
 ## LLVM
-add_path_if_exists /opt/homebrew/opt/llvm@17/bin
+add_path_if_exists /opt/homebrew/opt/llvm@19/bin
 
 # misc
 add_path_if_exists $HOME/bin
@@ -127,9 +118,6 @@ add_path_if_exists $WASMTIME_HOME/bin
 # moonbit
 add_path_if_exists "$HOME/.moon/bin"
 
-# rancher desktop
-# add_path_if_exists "$HOME/.rd/bin"
-
 if which atuin >/dev/null; then
   eval "$(atuin init zsh --disable-up-arrow)"
 fi
@@ -144,13 +132,6 @@ load_library $ZDOTDIR/nvm.zsh
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-# awrit
-add_path_if_exists "$HOME/.local/bin"
-alias tw="awrit https://x.com"
-
-# ruby
-add_path_if_exists "/opt/homebrew/opt/ruby/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
