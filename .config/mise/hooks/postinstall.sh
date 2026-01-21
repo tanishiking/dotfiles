@@ -12,7 +12,7 @@ if command -v brew &> /dev/null; then
         findutils
         git
         gnu-time
-        htop
+        btop
         pure
         tree
         wget

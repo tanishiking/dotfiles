@@ -13,6 +13,8 @@ jq = "latest"
 kind = "latest"
 kubectl = "latest"
 neovim = "latest"
+python = "latest"
+scala-cli = "latest"
 
 [env]
 XDG_CONFIG_HOME = "{{env.HOME}}/.config"
@@ -37,7 +39,7 @@ trusted_config_paths = ["~/dotfiles"]
 experimental = true
 
 [hooks]
-postinstall = "sh {{config_root}}/hooks/postinstall.sh"
+postinstall = "sh ~/.config/mise/hooks/postinstall.sh"
 
 [task_config]
-dir = "{{config_root}}/tasks"
+dir = "~/.config/mise/tasks"
