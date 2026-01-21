@@ -1,0 +1,10 @@
+.DS_Store
+*.swp
+.zsh/.zcompdump
+.zsh/.zsh_sessions/
+.claude
+.bloop/
+.bsp/
+.metals/
+.vscode/
+scripts/scalafmt

@@ -13,6 +13,7 @@ jq = "latest"
 kind = "latest"
 kubectl = "latest"
 neovim = "latest"
+ripgrep = "latest"
 scala-cli = "latest"
 
 [env]
@@ -31,6 +32,7 @@ ll = "eza -l -g --icons --git -a"
 la = "eza -l -g --icons --git -a"
 lt = "eza --tree --icons --git-ignore"
 cat = "bat"
+grep = "rg"
 
 [settings]
 auto_install = true
