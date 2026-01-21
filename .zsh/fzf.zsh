@@ -11,7 +11,6 @@ if which fzf >/dev/null; then
   alias ssh-fzf=_fzf-ssh-select-host
 
   if which ghq >/dev/null; then
-    bindkey '^]' fzf-src
     function fzf-src() {
       local src=$(ghq list --full-path | fzf --query "$LBUFFER")
       if [ -n "$src" ]; then
@@ -21,5 +20,6 @@ if which fzf >/dev/null; then
       zle -R -c
     }
     zle -N fzf-src
+    bindkey '^]' fzf-src
   fi
 fi

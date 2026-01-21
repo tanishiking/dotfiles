@@ -48,6 +48,11 @@ add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
 add_path_if_exists $HOME/.local/bin
 
+# Activate mise early so tools like atuin, ghq, fzf are available
+if which mise >/dev/null; then
+  eval "$(mise activate zsh)"
+fi
+
 if which opam > /dev/null; then
   eval $(opam env)
 fi
@@ -88,10 +93,6 @@ prompt pure
 
 load_library $ZDOTDIR/fzf.zsh
 load_library $ZDOTDIR/nvm.zsh
-
-if which mise >/dev/null; then
-  eval "$(mise activate zsh)"
-fi
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
