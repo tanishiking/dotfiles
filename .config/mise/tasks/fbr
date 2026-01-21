@@ -1,0 +1,7 @@
+#!/bin/bash
+#MISE description="Fuzzy find and checkout git branch"
+
+branch=$(git branch -a | fzf --height 40% --reverse | sed 's/remotes\/origin\///' | sed 's/^[* ]*//')
+if [ -n "$branch" ]; then
+    git checkout "$branch"
+fi

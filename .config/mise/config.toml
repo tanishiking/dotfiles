@@ -1,0 +1,43 @@
+[tools]
+# CLI tools (managed via mise instead of brew)
+atuin = "latest"
+bat = "latest"
+delta = "latest"
+eza = "latest"
+fzf = "latest"
+gh = "latest"
+ghq = "latest"
+gitui = "latest"
+hugo = "latest"
+jq = "latest"
+kind = "latest"
+kubectl = "latest"
+neovim = "latest"
+
+[env]
+XDG_CONFIG_HOME = "{{env.HOME}}/.config"
+LANG = "en_US.UTF-8"
+LC_ALL = "en_US.UTF-8"
+LANGUAGE = "en_US.UTF-8"
+EDITOR = "nvim"
+BAT_THEME = "ansi"
+
+[shell_alias]
+vi = "nvim"
+vim = "nvim"
+ls = "eza"
+ll = "eza -l -g --icons --git -a"
+la = "eza -l -g --icons --git -a"
+lt = "eza --tree --icons --git-ignore"
+cat = "bat"
+
+[settings]
+auto_install = true
+trusted_config_paths = ["~/dotfiles"]
+experimental = true
+
+[hooks]
+postinstall = "sh {{config_root}}/hooks/postinstall.sh"
+
+[task_config]
+dir = "{{config_root}}/tasks"
