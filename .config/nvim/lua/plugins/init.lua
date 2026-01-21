@@ -54,14 +54,6 @@ return {
     end,
   },
 
-  -- Easy align
-  {
-    "junegunn/vim-easy-align",
-    keys = {
-      { "ga", "<Plug>(EasyAlign)", mode = { "n", "x" }, desc = "Easy Align" },
-    },
-  },
-
   -- Fuzzy finder
   {
     "nvim-telescope/telescope.nvim",
