@@ -92,7 +92,6 @@ autoload -U promptinit; promptinit
 prompt pure
 
 load_library $ZDOTDIR/fzf.zsh
-load_library $ZDOTDIR/nvm.zsh
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

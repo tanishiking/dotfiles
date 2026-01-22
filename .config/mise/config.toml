@@ -15,6 +15,7 @@ kubectl = "latest"
 neovim = "latest"
 ripgrep = "latest"
 scala-cli = "latest"
+node = "latest"
 
 [env]
 XDG_CONFIG_HOME = "{{env.HOME}}/.config"
