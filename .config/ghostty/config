@@ -38,6 +38,9 @@ keybind = super+shift+r=reset_font_size
 # keybind = ctrl+p=scroll_page_lines:-10
 # keybind = ctrl+n=scroll_page_lines:10
 
+# send Cmd+P as Ctrl+P for Neovim telescope
+keybind = super+p=text:\x10
+
 # bell
 bell-features = audio,system,title
 

@@ -58,8 +58,28 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+      },
+    },
+    config = function()
+      require("telescope").setup({
+        defaults = {
+          path_display = { "truncate" },
+          layout_config = {
+            horizontal = {
+              preview_width = 0.4,
+            },
+          },
+        },
+      })
+      require("telescope").load_extension("fzf")
+    end,
     keys = {
+      { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
       { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
       { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
       { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
