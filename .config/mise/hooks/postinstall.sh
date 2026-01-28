@@ -8,6 +8,7 @@ if command -v brew &> /dev/null; then
     # Tools that need to stay in Homebrew (system libs, apps, not in mise registry)
     BREW_PACKAGES=(
         binaryen
+        clang-format
         coreutils
         findutils
         git
