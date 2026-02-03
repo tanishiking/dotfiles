@@ -13,6 +13,7 @@ if command -v brew &> /dev/null; then
         findutils
         git
         gnu-time
+        gnupg
         btop
         pure
         tree
