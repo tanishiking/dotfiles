@@ -20,6 +20,8 @@ if command -v brew &> /dev/null; then
         wget
         zsh
         zsh-async
+        colima
+        docker
     )
 
     for pkg in "${BREW_PACKAGES[@]}"; do
