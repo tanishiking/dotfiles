@@ -46,6 +46,9 @@ fi
 
 add_path_if_exists /usr/local/bin
 add_path_if_exists /usr/local/sbin
+# For installing v8 on Mac
+# https://gist.github.com/kevincennis/0cd2138c78a07412ef21
+add_path_if_exists $HOME/depot_tools
 add_path_if_exists $HOME/.local/bin
 
 # Activate mise early so tools like atuin, ghq, fzf are available
