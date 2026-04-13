@@ -8,3 +8,4 @@
 .metals/
 .vscode/
 scripts/scalafmt
+metals.sbt

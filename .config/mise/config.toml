@@ -18,6 +18,7 @@ neovim = "latest"
 ripgrep = "latest"
 scala-cli = "latest"
 node = "latest"
+zig = "latest"
 
 [env]
 XDG_CONFIG_HOME = "{{env.HOME}}/.config"
