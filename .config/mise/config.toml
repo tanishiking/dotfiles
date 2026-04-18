@@ -13,12 +13,11 @@ hugo = "latest"
 jq = "latest"
 kubectl = "latest"
 helm = "latest"
-k3d = "latest"
 neovim = "latest"
 ripgrep = "latest"
 scala-cli = "latest"
 node = "latest"
-zig = "latest"
+kind = "latest"
 
 [env]
 XDG_CONFIG_HOME = "{{env.HOME}}/.config"
