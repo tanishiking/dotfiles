@@ -22,6 +22,7 @@ if command -v brew &> /dev/null; then
         zsh-async
         colima
         docker
+        polyml
     )
 
     for pkg in "${BREW_PACKAGES[@]}"; do

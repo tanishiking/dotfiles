@@ -1,0 +1,10 @@
+#!/bin/bash
+#MISE description="Install or update HOL theorem prover (built with Poly/ML)"
+set -e
+
+HOL_DIR="$(ghq root)/github.com/HOL-Theorem-Prover/HOL"
+ghq get -u https://github.com/HOL-Theorem-Prover/HOL.git
+
+cd "$HOL_DIR"
+poly < tools/smart-configure.sml
+bin/build
