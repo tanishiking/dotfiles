@@ -1,0 +1,33 @@
+#!/bin/bash
+#MISE description="Install or update the HOL4 VSCode extension (built from source)"
+set -e
+
+REPO_DIR="$(ghq root)/github.com/HOL-Theorem-Prover/hol4-vscode"
+ghq get -u https://github.com/HOL-Theorem-Prover/hol4-vscode.git
+
+cd "$REPO_DIR"
+npm install
+npx --yes @vscode/vsce package -o hol4-vscode.vsix
+code --install-extension hol4-vscode.vsix --force
+
+# Merge HOL4 keybindings into VSCode settings.json (idempotent)
+SETTINGS="$HOME/Library/Application Support/Code/User/settings.json"
+BINDINGS="$(dirname "$0")/hol4-vscode-bindings.json"
+
+if [ -f "$SETTINGS" ] && [ -f "$BINDINGS" ]; then
+    cp "$SETTINGS" "$SETTINGS.bak"
+    tmp="$(mktemp)"
+    jq -s '
+      .[0] as $cur | .[1] as $add |
+      $cur
+      | .["vim.normalModeKeyBindings"] =
+          (((.["vim.normalModeKeyBindings"] // [])
+            | map(select((.commands // []) | map(startswith("hol4-mode.")) | any | not)))
+           + $add["vim.normalModeKeyBindings"])
+      | .["vim.visualModeKeyBindings"] =
+          (((.["vim.visualModeKeyBindings"] // [])
+            | map(select((.commands // []) | map(startswith("hol4-mode.")) | any | not)))
+           + $add["vim.visualModeKeyBindings"])
+    ' "$SETTINGS" "$BINDINGS" > "$tmp" && mv "$tmp" "$SETTINGS"
+    echo "Merged HOL4 keybindings into $SETTINGS (backup: $SETTINGS.bak)"
+fi
