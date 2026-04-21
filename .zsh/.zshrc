@@ -74,7 +74,8 @@ fi
 
 add_path_if_exists /opt/homebrew/opt/llvm@19/bin
 add_path_if_exists $HOME/bin
-add_path_if_exists $HOME/ghq/github.com/HOL-Theorem-Prover/HOL/bin
+export HOLDIR="$HOME/ghq/github.com/HOL-Theorem-Prover/HOL"
+add_path_if_exists $HOLDIR/bin
 
 export GPG_TTY=$(tty)
 if command -v gpgconf &>/dev/null; then
