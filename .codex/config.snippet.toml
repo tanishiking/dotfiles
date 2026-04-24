@@ -1,0 +1,9 @@
+# Snippet: apply manually to ~/.codex/config.toml
+# (config.toml is not symlinked because codex writes dynamic state
+#  like [projects.*] trust_level and [notice.model_migrations] into it.)
+
+[features]
+codex_hooks = true
+
+[plugins."caveman@caveman-repo"]
+enabled = true
