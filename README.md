@@ -26,6 +26,12 @@ mise install
 
 Tools: atuin, bat, delta, eza, fzf, gh, ghq, gitui, hugo, jq, kind, kubectl, neovim
 
+Custom install tasks:
+
+```bash
+mise run install-spin-canary
+```
+
 ## Remaining brew packages
 
 Some tools stay in Homebrew (installed via mise postinstall hook):

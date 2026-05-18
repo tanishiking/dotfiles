@@ -1,0 +1,13 @@
+#!/bin/bash
+#MISE description="Install or update Spin canary"
+set -e
+
+tmpdir="$(mktemp -d)"
+cleanup() {
+    rm -rf "$tmpdir"
+}
+trap cleanup EXIT
+
+cd "$tmpdir"
+curl -fsSL https://spinframework.dev/downloads/install.sh | bash -s -- -v canary
+install -m 0755 spin "$HOME/.local/bin/spin"

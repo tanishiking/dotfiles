@@ -20,7 +20,6 @@ if command -v brew &> /dev/null; then
         wget
         zsh
         zsh-async
-        colima
         docker
         polyml
     )
