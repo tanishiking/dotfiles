@@ -31,3 +31,14 @@ if command -v brew &> /dev/null; then
         fi
     done
 fi
+
+if command -v cs &> /dev/null && ! command -v metals &> /dev/null; then
+    echo "Installing Metals via Coursier..."
+    cs install metals
+fi
+
+COURSIER_BIN="$HOME/Library/Application Support/Coursier/bin"
+if [ -x "$COURSIER_BIN/metals" ]; then
+    mkdir -p "$HOME/.local/bin"
+    ln -sfn "$COURSIER_BIN/metals" "$HOME/.local/bin/metals"
+fi

@@ -5,6 +5,7 @@
 - `.config/nvim/` - Neovim configuration (lazy.nvim)
 - `.config/mise/` - mise tool manager configuration
 - `.config/git/` - Git global ignore
+- `.config/zed/` - Zed configuration
 
 ## Setup
 
@@ -24,7 +25,16 @@ brew install mise
 mise install
 ```
 
-Tools: atuin, bat, delta, eza, fzf, gh, ghq, gitui, hugo, jq, kind, kubectl, neovim
+Tools: atuin, bat, coursier, delta, eza, fd, fzf, gh, ghq, gitui, helm, hugo, jq, kind, kubectl, neovim, node, ripgrep, scala-cli
+
+## Zed Scala/Metals
+
+Zed auto-installs the Scala extension (`zed-metals`) via `.config/zed/settings.json`.
+Metals is installed by the mise postinstall hook with:
+
+```bash
+cs install metals
+```
 
 Custom install tasks:
 

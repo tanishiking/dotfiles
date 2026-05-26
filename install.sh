@@ -21,7 +21,7 @@ link() {
     echo "Linked: $dest -> $src"
 }
 
-mkdir -p ~/.config ~/.codex
+mkdir -p ~/.config ~/.codex ~/.local/bin
 
 link "$DOTFILES_DIR/.zshenv" ~/.zshenv
 link "$DOTFILES_DIR/.zsh" ~/.zsh
@@ -29,4 +29,5 @@ link "$DOTFILES_DIR/.config/nvim" ~/.config/nvim
 link "$DOTFILES_DIR/.config/mise" ~/.config/mise
 link "$DOTFILES_DIR/.config/git" ~/.config/git
 link "$DOTFILES_DIR/.config/ghostty" ~/.config/ghostty
+link "$DOTFILES_DIR/.config/zed" ~/.config/zed
 link "$DOTFILES_DIR/.codex/hooks.json" ~/.codex/hooks.json
